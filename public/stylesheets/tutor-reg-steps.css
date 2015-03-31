@@ -1,0 +1,187 @@
+.registrationStepsContainer {
+    background: #ffffff;
+    display: inline-block;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+.registrationTimeline{
+    padding:20px;
+    border-bottom:1px solid #CCCCCC;
+}
+
+.registrationTimeline span{
+    display: inline-block;
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    border:2px solid #AF7AC5;
+    line-height: 40px;
+    font-size: 20px;
+    color: #AF7AC5;
+    cursor: pointer;
+}
+
+.registrationTimeline span:nth-child(7n){
+    border:2px solid #AF7AC5;
+    color: #AF7AC5;
+}
+
+.registrationTimeline span:nth-child(7n+1){
+
+     border:2px solid #EC7063;
+     color: #EC7063;
+ }
+
+.registrationTimeline .connectingLine:nth-child(7n+2){
+    background: #EC7063;
+}
+
+.registrationTimeline span:nth-child(7n+3){
+    border:2px solid #52BE80;
+    color: #52BE80;
+}
+
+.registrationTimeline .connectingLine:nth-child(7n+4){
+    background: #52BE80;
+}
+
+.registrationTimeline span:nth-child(7n+5){
+    border:2px solid #5499C7;
+    color: #5499C7;
+}
+
+.registrationTimeline .connectingLine:nth-child(7n+6){
+    background:#5499C7;
+}
+
+.registrationTimeline .connectingLine{
+    display: inline-block;
+    width: 130px;
+    height:3px;
+    position: relative;
+   top:-5px;
+}
+
+.registrationTimeline span.disabled{
+    color:#ccc;
+    border:2px solid #ccc;
+}
+
+.registrationTimeline .connectingLine.disabled{
+    background: #ccc;
+}
+
+.tutorRegistrationSteps{
+display: inline-block;
+    background: #ffffff;
+    width: 100%;
+    min-width: 600px;
+}
+
+.tutorRegistrationSteps input{
+    margin-bottom:20px;
+    margin-left:50px;
+    border:none;
+    border-bottom: 2px solid #CCCCCC;
+    width:320px;
+}
+
+.tutorRegistrationSteps input[type="checkbox"]{
+    margin:0;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+
+}
+
+.tutorRegistrationSteps input:focus {
+    outline: none;
+}
+
+.tutorRegistrationSteps .buttonContainer{
+float: right;
+    margin:20px;
+}
+
+.tutorRegistrationSteps .headingBar{
+    width:100%;
+    top:0;
+    left:0;
+}
+
+.tutorRegistrationSteps button{
+    width: 170px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.tutorRegistrationStep1 .paddingBox span{
+    width: 170px;
+    display: inline-block;
+}
+
+.paddingBox{
+    text-align: left;
+    padding:20px;
+}
+
+.tutorRegistrationStep1 .headingBar{
+    border-bottom: 2px solid #EC7063;
+    color:#EC7063;
+}
+
+.tutorRegistrationStep1 .buttonContainer{
+    border:2px solid #EC7063;
+}
+
+.tutorRegistrationStep1 button{
+    background: #EC7063;
+}
+
+.tutorRegistrationStep2 .headingBar{
+    border-bottom: 2px solid #52BE80;
+    color:#52BE80;
+}
+
+.tutorRegistrationStep2 .buttonContainer{
+    border:2px solid #52BE80;
+}
+
+.tutorRegistrationStep2 button{
+    background: #52BE80;
+}
+
+.tutorRegistrationStep3 .headingBar{
+    border-bottom: 2px solid #5499C7;
+    color:#5499C7;
+}
+
+.tutorRegistrationStep3 .buttonContainer{
+    border:2px solid #5499C7;
+}
+
+.tutorRegistrationStep3 button{
+    background: #5499C7;
+}
+
+.tutorRegistrationStep3 h1{
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.subjectsGroupHeading{
+    display: block;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.subjectGroup .subject{
+    display: inline-block;
+    margin-right:20px;
+}
+
+.tutorRegistrationStep3 textarea{
+    width: 600px;
+    height: 170px;
+    display: block;
+}

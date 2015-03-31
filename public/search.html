@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="../javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="../javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="../javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="../javascripts/services/services.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
+    <script type="text/javascript" src="../javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="../stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/search-style.css"/>
+
+</head>
+<body ng-controller="MenuCtrl">
+
+
+
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+        <li ng-show="!anyoneLoggedIn" class="navigationList">
+            <ul>
+                <li class="icon" id="profile" ng-class="{active: isActive('/profile.html')}"> <a href="#/profile.html">Profile</a></li>
+                <li class="icon" id="messages" >Messages</li>
+                <li class="icon" id="lessons" >Lessons</li>
+            </ul>
+        </li>
+        <li class="tutorChatList" ng-show="studentLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'" ng-controller="SearchCtrl">
+    <header>
+        <div class="options" ng-click="toggleMenu();" stop-event ng-class="clicked ? 'clicked' : 'notClicked'">
+            <div class="optionBar optionBar1"></div>
+            <div class="optionBar optionBar2"></div>
+            <div class="optionBar optionBar3"></div>
+
+        </div>
+
+
+            <input id="search" type="text" placeholder="Search for tutors by subject" ng-model="search.query"/>
+            <div class="searchBox" ng-click="searchData()">Search</div>
+
+        <div id="header-right-container">
+            <div id="login" ng-click="toggleLogin();" stop-event >
+                Log In
+                <login ng-show="loginOpened" stop-event></login>
+            </div>
+            <span>|</span>
+            <a href="register.html"><div>Sign Up</div></a>
+        </div>
+    </header>
+
+<section>
+    <div class="searchResultsWrapper">
+        <div class="searchResults">
+                <div class="imageContainer"><div class="tutorImage" id="tutor1"></div></div>
+            <div class="tutorInfo"><h1 class="tutorName">Aheli C</h1><div class="tutorCollege"></div>
+                <div class="tutorDescription">"...Even before I got to college, in high school I loved to tutor. I worked with students..."</div>
+                <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+            </div>
+        </div>
+        <div class="searchResults">
+            <div class="imageContainer"><div class="tutorImage" id="tutor2"></div></div>
+            <div class="tutorInfo"><h1 class="tutorName">Elli M</h1><div class="tutorCollege"></div>
+                <div class="tutorDescription">"..I tutor classmates on the side in microbiology and chemistry this semester..."</div>
+                <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+            </div>
+        </div>
+        <div class="searchResults">
+            <div class="imageContainer"><div class="tutorImage" id="tutor1"></div></div>
+            <div class="tutorInfo"><h1 class="tutorName">Aheli C</h1><div class="tutorCollege"></div>
+                <div class="tutorDescription">"...Even before I got to college, in high school I loved to tutor. I worked with students..."</div>
+                <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+            </div>
+        </div>
+        <div class="searchResults">
+            <div class="imageContainer"><div class="tutorImage" id="tutor2"></div></div>
+            <div class="tutorInfo"><h1 class="tutorName">Elli M</h1><div class="tutorCollege"></div>
+                <div class="tutorDescription">"..I tutor classmates on the side in microbiology and chemistry this semester..."</div>
+                <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+            </div>
+        </div><div class="searchResults">
+        <div class="imageContainer"><div class="tutorImage" id="tutor1"></div></div>
+        <div class="tutorInfo"><h1 class="tutorName">Aheli C</h1><div class="tutorCollege"></div>
+            <div class="tutorDescription">"...Even before I got to college, in high school I loved to tutor. I worked with students..."</div>
+            <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+        </div>
+    </div>
+        <div class="searchResults">
+            <div class="imageContainer"><div class="tutorImage" id="tutor2"></div></div>
+            <div class="tutorInfo"><h1 class="tutorName">Elli M</h1><div class="tutorCollege"></div>
+                <div class="tutorDescription">"..I tutor classmates on the side in microbiology and chemistry this semester..."</div>
+                <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+            </div>
+        </div><div class="searchResults">
+        <div class="imageContainer"><div class="tutorImage" id="tutor1"></div></div>
+        <div class="tutorInfo"><h1 class="tutorName">Aheli C</h1><div class="tutorCollege"></div>
+            <div class="tutorDescription">"...Even before I got to college, in high school I loved to tutor. I worked with students..."</div>
+            <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+        </div>
+    </div>
+        <div class="searchResults">
+            <div class="imageContainer"><div class="tutorImage" id="tutor2"></div></div>
+            <div class="tutorInfo"><h1 class="tutorName">Elli M</h1><div class="tutorCollege"></div>
+                <div class="tutorDescription">"..I tutor classmates on the side in microbiology and chemistry this semester..."</div>
+                <div class="contactTutor"><div class="message"></div><div class="requestLesson"></div></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <footer>
+        <div class="container">
+            <p>©2015 HelpDU. All rights reserved.</p>
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                    <a href="">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    </div>
+
+
+</body>
+</html>

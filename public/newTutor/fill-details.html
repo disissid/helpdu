@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="../javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="../javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="../javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="../javascripts/services/services.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
+    <script type="text/javascript" src="../javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="../stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/tutor-reg-steps.css"/>
+</head>
+<body ng-controller="MenuCtrl">
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+        <li ng-show="!anyoneLoggedIn" class="navigationList">
+            <ul>
+                <li class="icon" id="profile" ng-class="{active: isActive('/profile.html')}"> <a href="#/profile.html">Profile</a></li>
+                <li class="icon" id="messages" >Messages</li>
+                <li class="icon" id="lessons" >Lessons</li>
+            </ul>
+        </li>
+        <li class="tutorChatList" ng-show="studentLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+
+<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+    <header>
+        <div class="options" ng-click="toggleMenu();" stop-event>
+            <div class="optionBar optionBar1"></div>
+            <div class="optionBar optionBar2"></div>
+            <div class="optionBar optionBar3"></div>
+
+        </div>
+
+
+
+
+        <input id="search" type="text" placeholder="Search for tutors by subject"/>
+        <div id="header-right-container">
+            <div id="login" ng-click="toggleLogin();" stop-event >
+                Log In
+                <login ng-show="loginOpened" stop-event></login>
+            </div>
+            <span>|</span>
+            <a href="register.html"><div>Sign Up</div></a>
+        </div>
+    </header>
+
+
+
+    <section>
+            <div class="registrationStepsContainer" ng-controller="TutorRegistrationStepsCtrl" ng-show="step<4">
+                <div class="registrationTimeline"><span ng-click="check(1)" >1</span><div ng-class="value > 1 ? 'enabled' : 'disabled'"  class="connectingLine"></div><span  ng-class="value > 1 ? 'enabled' : 'disabled'" ng-click="check(2)"  >2</span><div ng-class="value > 2 ? 'enabled' : 'disabled'" class="connectingLine"></div><span ng-class="value > 2 ? 'enabled' : 'disabled'" ng-click="check(3)" >3</span></div>
+                <div class="tutorRegistrationStep1 tutorRegistrationSteps" ng-show="step == 1">
+
+                        <form name="confirmInfoForm1" ng-submit="submitData()" novalidate>
+                            <div class="headingBar"><div class="headingBarIcon"></div><h1>Confirm Information</h1>
+                            </div>
+                            <div class="paddingBox">
+                            <span>Name:</span><input type="text" name="name"  ng-model="newTutor.name" placeholder="Name"  required ng-focus/><br/>
+                            <span>Email:</span><input type="email" name="email"  ng-model="newTutor.email" placeholder="Email Address" required ng-focus/><br/>
+                                <span>Institute Email:</span><input type="email" name="email"  ng-model="newTutor.instiEmail" placeholder="Email Address" required ng-focus/><br/>
+                                <span>Institute Name:</span><input type="text" name="instituteName" ng-model="newTutor.instiName"  placeholder="Name of the Institute you are studying in"  required ng-focus/><br/>
+                                <span>Major:</span><input type="text" name="major"  ng-model="newTutor.major" placeholder="Major"  required ng-focus/><br/>
+                                <span>Year of Graduation:</span><input type="text" name="year" ng-model="newTutor.yearOfGrad" placeholder="Year of Graduation"  required ng-focus/><br/>
+                            </div><div class="buttonContainer"><button type="submit" ng-disabled="confirmInfoForm1.$invalid">Confirm</button></div>
+                        </form>
+                </div>
+
+
+                <div class="tutorRegistrationStep2 tutorRegistrationSteps" ng-show="step == 2">
+                    <form name="confirmInfoForm2" ng-submit="submitData()" novalidate>
+                        <div class="headingBar"><div class="headingBarIcon"></div><h1>Area of Expertise</h1>
+                        </div>
+                        <div class="paddingBox">
+                                <!--<span class="subjectsGroupHeading" ng-click="science = true" ng-show="science == false">+Science</span>
+                                <span class="subjectsGroupHeading" ng-click="science = false" ng-show="science == true">-Science</span>
+                                <div class="subjectGroup" ng-show="science == true">-->
+                            <div class="subject" ng-repeat="subject in subjectList"><input id={{subject.subjectName}} type="checkbox" ng-checked="selection.indexOf(subject.subjectName) > -1" ng-click="toggleSelection(subject.subjectName)"  name="subject"  value="{{subject.subjectName}}">{{subject.subjectName}}</div>
+                            <div class="buttonContainer"><button type="submit" ng-disabled="confirmInfoForm2.$invalid">Confirm</button></div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+                <div class="tutorRegistrationStep3 tutorRegistrationSteps" ng-show="step == 3">
+                    <form name="confirmInfoForm3" ng-submit="submitData()" novalidate>
+                        <div class="headingBar"><div class="headingBarIcon"></div><h1>Tell us about yourself</h1>
+                        </div>
+                        <div class="paddingBox">
+                            <h1>Teaching Experience</h1>
+                            <textarea required ng-model="newTutor.teachingExp"></textarea>
+                            <h1>Extracurricular Interests</h1>
+                            <textarea required ng-model="newTutor.extracurrInterests"></textarea>
+                            <div class="buttonContainer"><button type="submit" ng-disabled="confirmInfoForm3.$invalid">Confirm</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div ng-show="step==4"><span>HelpDU experts are looking into your profile.You will be notified via email when approved.</span></div>
+
+    </section>
+
+    <footer>
+        <div class="footerBox">
+            <p>©2015 HelpDU. All rights reserved.</p>
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                    <a href="">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

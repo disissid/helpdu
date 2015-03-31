@@ -1,0 +1,85 @@
+section{
+    text-align: center;
+}
+
+.block{
+    float:left;
+    width:400px;
+    height:400px;
+    border:10px solid red;
+    text-align: center;
+    display: inline-block;
+    margin:20px;
+}
+
+.block:nth-child(4n+1){
+    border:10px solid #53D0C0;
+}
+
+.block:nth-child(4n+2){
+    border:10px solid #F76767;
+}
+
+.block:nth-child(4n+3){
+    border:10px solid #FFA83C;
+}
+
+.block:nth-child(4n+4){
+    border:10px solid #62A9F9;
+}
+
+
+button{
+    font-size: 19px;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background:#2F9AD5;
+    width:290px;
+    height:50px;
+    margin:10px 0;
+}
+
+
+
+
+.block:nth-child(4n+1) button{
+    background:#FFA83C;
+}
+
+.block:nth-child(4n+2) button{
+    background:#62A9F9;
+}
+
+.block:nth-child(4n+3) button{
+    background:#F76767;
+}
+
+.block:nth-child(4n+4) button{
+    background:#53D0C0;
+}
+
+button#reqLessonButton[disabled="disabled"]{
+    background:grey;
+}
+
+input,select{
+    border-radius: 0px;
+    width:280px;
+    height:30px;
+    padding:5px;
+    font-size: 16px;
+    margin:10px;
+}
+
+
+
+.dumpBox{
+    display: inline-block;
+    width:300px;
+    height:200px;
+    margin:10px;
+    border:2px solid #929292;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="../javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="../javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="../javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="../javascripts/services/services.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
+    <script type="text/javascript" src="../javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="../stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+    <script type="text/javascript" src="../javascripts/lib/custombox.js"></script>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/custombox.css"/>
+</head>
+
+<body ng-controller="MenuCtrl" ng-init="getStudentProfileData()" ng-cloak ><!--ng-show="Authenticated"-->
+
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+
+        <li  class="navigationList"><!--ng-show="!anyoneLoggedIn"-->
+            <ul>
+                <a href="/student/lesson"><li class="icon" id="lessons" >Lessons</li></a>
+                <a href="/student/messages"><li class="icon" id="messages" >Messages</li></a>
+                <a href="/student/notifications"><li class="icon" id="notifications" >Notifications</li></a>
+                <a href="/student/billing"><li class="icon" id="billing" >Billing</li></a>
+                <a href="/student/buyHours"><li class="icon" id="buyHours" >Buy Hours</li></a>
+            </ul>
+        </li>
+        <!--<li class="tutorChatList" ng-show="studentLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>-->
+    </ul>
+</aside>
+
+
+<div id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+    <header>
+        <div class="options" ng-click="toggleMenu();" stop-event>
+            <div class="optionBar optionBar1"></div>
+            <div class="optionBar optionBar2"></div>
+            <div class="optionBar optionBar3"></div>
+        </div>
+
+
+
+
+        <input id="search" type="text" placeholder="Search for tutors by subject"/>
+        <div id="header-right-container">
+            <div class="rightControls">
+                <div class="notifControl controls" ng-click="toggleBox(1);" stop-event>
+                    <div class="notifControlBox" ng-show="boxId == 1 && boxOpened" stop-event>
+                        <div class="notifControlTri"></div>
+                    </div>
+                </div>
+                <div class="messageControl controls" ng-click="toggleBox(2);" stop-event>
+                    <div class="messageControlBox" ng-show="boxId == 2 && boxOpened" stop-event>
+                        <div class="messageControlTri"></div>
+                    </div>
+                </div>
+                <div class="profileControl controls"></div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <button id="element" class="requestLessonButton" type="submit">+Request Lesson</button>
+        <div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper modal">
+            <div class="headingBar"><div class="headingBarIcon"></div><h1>Request Lesson</h1>
+            </div>
+            <form name="reqLessonForm"  ng-submit="submitData()" novalidate>
+                <select ng-model="subject" required>
+                    <option value="" default selected>select subject</option>
+                    <option ng-repeat="subject in subjectList">{{subject.subjectName}}</option>
+                </select><br/>
+                <textarea ng-model="message" required></textarea><br/>
+                <div id="upload" ng-controller="FileCtrl"><span>Attach File(s)</span>
+                    <input type="file" ng-file-select="onFileSelect($files)" multiple>
+                </div> <br/>
+                <input  id="deadline"  placeholder="Deadline" name="input" ng-model="deadline"
+                       min="1" max="72" step="1"  required>
+                <input  placeholder="No. of Hours" ng-model="hours" min="1" step="1" required/><br/>
+                <select ng-model="mode" required>
+                    <option value="" default selected>select mode</option>
+                    <option selected="selected" value="true">private</option>
+                    <option value="false">public</option>
+                </select><br/>
+                <div class="buttonContainer"><button type="submit" ng-disabled="reqLessonForm.$invalid">Request Lesson</button></div><br/>
+            </form>
+        </div>
+
+        <div class="privateLessons lessonsTable" ng-controller="studentLessonCtrl">
+            <div class="headingBar"><div class="headingBarIcon"></div><h1>Lessons</h1>
+            </div>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Mode</th>
+                    <th>File URL</th>
+                    <th>Created On</th>
+                    <th>Deadline Hours</th>
+                    <th>No. of Hours</th>
+                    <th>Status</th>
+                </tr>
+                <tr ng-repeat="lesson in lessons  | orderBy:'completed'">
+                    <td>{{lesson.subject}}</td>
+                    <td><span ng-show="{{lesson.privatePublicKey}}">Private</span><span ng-show="!({{lesson.privatePublicKey}})">Public</span></td>
+                    <td>{{lesson.fileLinks}}</td>
+                    <td>{{lesson.createdTimestamp | date:"MM/dd/yyyy"}}</td>
+                    <td>{{lesson.deadlineHours}}</td>
+                    <td>{{lesson.numberOfHours}}</td>
+                    <td><span ng-show="{{lesson.completed}}">Completed</span><span ng-show="!({{lesson.completed}})">On Going</span></td>
+                </tr>
+            </table>
+        </div>
+        </section>
+    <footer>
+        <div class="container">
+            <p>©2015 HelpDU. All rights reserved.</p>
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                    <a href="">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('element').addEventListener('click', function ( e ) {
+            Custombox.open({
+                target: '.modal',
+                effect: 'fadein',
+                width:'846'
+            });
+            e.preventDefault();
+        });
+    });
+</script>
+
+</body>
+</html>

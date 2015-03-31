@@ -1,0 +1,40 @@
+*{
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+table {
+    border-collapse: collapse;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+table, th, td {
+    border:1px solid #2B2B2B;
+}
+
+
+table {
+    width: 40%;
+    margin:0 auto;
+}
+th{
+   background:#2B2B2B;
+    color:white;
+    height:40px;
+    line-height:40px;
+    font-size:20px;
+}
+
+td{
+    height:30px;
+    text-align: center;
+    line-height:30px;
+    font-size:17px;
+}
+
+tr:nth-child(even){
+    background: #CCCCCC;
+}
+

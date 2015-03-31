@@ -1,0 +1,117 @@
+.subscriptionPack{
+    border: 2px solid #AF7AC5;
+    display: inline-block;
+    padding: 20px;
+    background: #fff;
+    margin: 10px;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+.subscriptionPack:nth-child(3n),.subscriptionPack:nth-child(3n) .buttonContainer{
+    border: 2px solid #AF7AC5;
+}
+
+.subscriptionPack:nth-child(3n+1),.subscriptionPack:nth-child(3n+1) .buttonContainer{
+    border: 2px solid #EC7063;
+}
+
+.subscriptionPack:nth-child(3n+2),.subscriptionPack:nth-child(3n+2) .buttonContainer{
+    border: 2px solid #52BE80;
+}
+
+
+
+
+
+.subscriptionPack span{
+    font-size: 20px;
+    display: block;
+    margin: 20px;
+    color: #4E4E53;
+}
+
+.subscriptionPack .hoursContainer span{
+    color:#E6E6E6;
+    font-size:18px;
+}
+
+.subscriptionPack .hoursContainer{
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    margin:0 auto;
+
+}
+
+.subscriptionPack .hoursContainer span{
+    margin:0;
+}
+
+.subscriptionPack:nth-child(3n) .hoursContainer{
+    background: #2F2F32;
+    border: 10px solid #4E4E53;
+    border-top-color:  #AF7AC5;
+    border-bottom-color:  #AF7AC5;
+}
+
+.subscriptionPack:nth-child(3n) .subscribeButton{
+    background: #AF7AC5;
+}
+
+.subscriptionPack:nth-child(3n+1) .hoursContainer{
+    background: #2F2F32;
+    border: 10px solid #4E4E53;
+    border-top-color: #EC7063;
+    border-bottom-color: #EC7063;
+}
+
+.subscriptionPack:nth-child(3n+1) .subscribeButton{
+    background: #EC7063;
+}
+
+.subscriptionPack:nth-child(3n+2) .hoursContainer{
+    background: #2F2F32;
+    border: 10px solid #4E4E53;
+    border-top-color: #52BE80;
+    border-bottom-color: #52BE80;
+}
+
+.subscriptionPack:nth-child(3n+2) .subscribeButton{
+    background: #52BE80;
+}
+
+
+.subscriptionPack:nth-child(3n) .subscriptionPrice{
+    color: #AF7AC5;
+}
+
+.subscriptionPack:nth-child(3n+1) .subscriptionPrice{
+    color: #EC7063;
+}
+
+.subscriptionPack:nth-child(3n+2) .subscriptionPrice{
+    color: #52BE80;
+}
+
+
+
+.subscriptionPack .hoursContainer .hour{
+    font-size:40px;
+    padding-top:15px;
+}
+
+.subscriptionPack .subscriptionPrice{
+
+    font-size: 30px;
+}
+
+.subscriptionPack .buttonContainer{
+    border:2px solid  #AF7AC5;
+}
+
+.subscribeButton{
+    width: 190px;
+    height: 35px;
+    line-height: 35px;
+}

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html ng-app="indexApp" class="indexPage">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="javascripts/lib/angular-Material-Preloader.min.js"></script>
+    <script type="text/javascript" src="javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="javascripts/services/services.js"></script>
+    <script type="text/javascript" src="javascripts/directives/focus-directive.js"></script>
+    <script type="text/javascript" src="javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
+    <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+</head>
+<body ng-controller="MenuCtrl">
+<div material-preloader position="top" height="5px" col1='#8e44ad' col2='#c0392b' col3='#2980b9' col4='#16a085' style="position: relative;z-index: 9999;"></div>
+
+
+
+
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+        <li ng-show="anyoneLoggedIn" class="navigationList">
+            <ul>
+                <li class="icon" id="profile" ng-class="{active: isActive('/profile.html')}"> <a href="#/profile.html">Profile</a></li>
+                <li class="icon" id="messages" >Messages</li>
+                <li class="icon" id="lessons" >Lessons</li>
+            </ul>
+        </li>
+        <li class="tutorChatList" ng-show="!tutorLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+
+<div class="indexPage" id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+<!--<header>
+    <div class="options" ng-click="toggleMenu();" stop-event>
+        <div class="optionBar optionBar1"></div>
+        <div class="optionBar optionBar2"></div>
+        <div class="optionBar optionBar3"></div>
+
+    </div>
+    <span id="register">Sign Up</span>
+
+
+
+         <input id="search" type="text" placeholder="Search for tutors by subject"/>
+         <div id="header-right-container">
+           <div id="login" ng-click="toggleLogin();" stop-event >
+               Log In
+               <login ng-show="loginOpened" stop-event></login>
+           </div>
+             <div>|{{4+2}}</div>
+             <a href="register.html"><div>Sign Up</div></a>
+         </div>
+    </header>-->
+
+
+
+<section id="indexSection">
+    <div class="indexOptions" ng-click="toggleMenu();" stop-event>
+        <div class="optionBar optionBar1"></div>
+        <div class="optionBar optionBar2"></div>
+        <div class="optionBar optionBar3"></div>
+
+    </div>
+
+    <div class="rightControls">
+         <div class="notifControl controls">
+             <div class="notifControlBox">
+
+             </div>
+         </div>
+        <div class="messageControl controls"></div>
+        <div class="profileControl controls"></div>
+    </div>
+
+    <div class="searchBarWrapper">
+        <!--<div class="opacityCover"></div>-->
+        <div class="infoBoxContainer">
+        <div class="infoBox">
+            <h1>Improve your grades.</h1>
+
+            <p>Connect with a top tutor online.</p>
+
+        </div>
+        <div ng-show="!anyoneLoggedIn" class="homePageLogin"><!--<div class="loginBackgroundBlur"></div>-->
+            <login></login></div>
+        </div>
+
+        <div class="searchBar">
+            <input type="text" placeholder="Search for tutors by subject" class="search"/>
+            <input type="submit" name="search" value="Search" class="searchBtn"/>
+        </div>
+    </div>
+
+
+
+   <!-- <div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper">
+        <div class="headingBar"><h1>Request Lesson</h1>
+        </div>
+        <form name="reqLessonForm"  ng-submit="submitData()" novalidate>
+            <input type="text" placeholder="Subject" name="subject" ng-model="subject" required /><br/>
+            <textarea ng-model="message" required></textarea><br/>
+            <div id="upload" ng-controller="FileCtrl"><span>Attach File(s)</span>
+                <input type="file" ng-file-select="onFileSelect($files)" multiple>
+            </div> <br/>
+           <input id="deadline" type="number" placeholder="Deadline" name="input" ng-model="deadline"
+                            min="0" max="99" required>
+            <input type="number" placeholder="No. of Hours" ng-model="hours" min="0" max="99" required/><br/>
+            <select ng-model="mode" required>
+                <option value="" default selected>select mode</option>
+                <option selected="selected" value="0">private</option>
+                <option value="1">public</option>
+            </select><br/>
+            <button type="submit" ng-disabled="reqLessonForm.$invalid">Request Lesson</button><br/>
+        </form>
+    </div>-->
+
+
+
+
+
+    <div class="howItWorks">
+        <h2>Imagine how much easier homework would be<br>if you could...</h2>
+        <div class="searchTutor steps"><div class="stepImage"></div><div class="stepDescription"><span>Connect instantly anytime, anywhere.</span></div></div>
+        <div class="requestLesson steps"><div class="stepImage"></div><div class="stepDescription"><span>Get your own private tutor.</span></div></div>
+        <div class="homeworkHelp steps"><div class="stepImage"></div><div class="stepDescription"><span>Discuss your homework with tutor</span></div></div>
+    </div>
+
+    <div class="studentReviews">
+        <h2>What our students say about their tutors</h2>
+        <div class="review review1">
+
+        <div class="quote-body">
+            <div class="reviewedTutor">
+                <div class="tutorImage"></div>
+                <div class="tutorDescription">
+                    <div class="tutorName"><span>Saumya Sharma</span>
+                    </div>
+                    <div class="tutorCollege"><span>Birla Institute of Technology & Science</span>
+                    </div>
+                </div>
+            </div>
+            <div class="quote"><p> "Very good and helpful tutor. Explained concepts better than my professor."</p></div>
+            </div>
+        </div>
+        <div class="review review2">
+
+            <div class="quote-body">
+                <div class="reviewedTutor">
+                    <div class="tutorImage"></div>
+                    <div class="tutorDescription">
+                        <div class="tutorName"><span>Meg s</span>
+                        </div>
+                        <div class="tutorCollege"><span>University of Pennsylvania</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="quote"><p> "Extremely helpful in helping me revise and make corrections to my essay! Highly recommended."</p></div>
+            </div>
+        </div>
+        </div>
+</section>
+
+<footer>
+    <div class="container">
+    <p>©2015 HelpDU. All rights reserved.</p>
+    <ul>
+        <li>
+            <a href="/about.html">About</a>
+        </li>
+        <li>
+            <a href="/contact.html">Contact</a>
+        </li>
+        <li>
+            <a href="">Terms &amp; Conditions</a>
+        </li>
+        <li>
+            <a href="">Privacy Policy</a>
+        </li>
+    </ul>
+        </div>
+</footer>
+</div>
+
+</body>
+</html>

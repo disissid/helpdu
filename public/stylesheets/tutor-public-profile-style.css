@@ -1,0 +1,154 @@
+#tutorPublicProfileContainer{
+    padding:25px;
+    display: inline-block;
+    background: #ffffff;
+}
+
+.profileHeader{
+    margin-bottom:30px;
+}
+
+.imageContainer{
+    padding:4px;
+    border:2px solid #5499C7;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+    margin-top:10px;
+}
+.profileImage{
+    background: url("../images/1.png");
+    background-size: cover;
+    height:120px;
+    width:120px;
+    border-radius: 50%;
+    display: inline-block;
+    float:left;
+}
+
+.basicDetails{
+    display: inline-block;
+    float:left;
+    text-align: left;
+    margin:20px;
+    width:250px;
+}
+.basicDetails div{
+    margin-bottom: 10px;
+}
+
+.basicDetails .tutorName{
+font-size:24px;
+}
+
+.basicDetails .tutorCollege{
+    font-size:19px;
+    line-height: 1.2;
+}
+
+.statsContainer{
+    text-align: center;
+    display: inline-block;
+    margin:20px;
+}
+
+.statsContainer .stats{
+    display: inline-block;
+    margin:0 20px;
+}
+
+.stats:nth-child(3n+1) span{
+    color:#52BE80;
+}
+
+.stats:nth-child(3n+2) span{
+    color:#AF7AC5;
+}
+
+.stats:nth-child(3n+3) span{
+    color:#EC7063;
+}
+
+.stats span{
+    font-size:19px;
+}
+
+.stats .statNumber{
+    display: block;
+    font-size: 40px;
+    margin:10px;
+}
+
+.profileDetails{
+    border:1px solid #CCCCCC;
+}
+
+.profileNavigation{
+    text-align: left;
+    float: left;
+    padding:20px;
+    height:100%;
+    width:150px;
+}
+
+.profileNavigation li{
+    height:50px;
+    line-height: 50px;
+    font-size: 18px;
+    border-bottom:1px solid #CCCCCC;
+
+}
+
+
+.displayDetails{
+    display: inline-block;
+    width:530px;
+    padding:40px;
+    border-right:1px solid #CCCCCC;;
+    border-left:1px solid #CCCCCC;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.displayDetails h2{
+    font-size:19px;
+    margin-bottom: 10px;
+}
+
+.displayDetails article{
+    margin-bottom: 50px;
+}
+
+
+.tutoredSubjects{
+    text-align: left;
+    float:right;
+    padding:40px 20px;
+    height:100%;
+    width:220px;
+}
+
+.tutoredSubjects h2{
+    font-size:19px;
+    margin-bottom: 10px;
+}
+
+.tutoredSubjects span.subjects{
+    display: inline-block;
+    background: #F1F1F1;
+    color: #ffffff;
+    padding:10px 15px;
+    margin:5px;
+}
+
+span.subjects:nth-child(3n+1){
+    background:	#52BE80;
+}
+
+span.subjects:nth-child(3n+2){
+    background:#AF7AC5 ;
+}
+
+span.subjects:nth-child(3n+3){
+    background:#EC7063 ;
+}

@@ -1,0 +1,102 @@
+.billingContainer{
+    display: inline-block;
+}
+
+.walletContainer{
+    float: left;
+    margin-right: 20px;
+}
+
+.walletBigContainer{
+    min-height: 350px;
+}
+
+.transactionHistory,.walletContainer{
+    display: inline-block;
+    background: #FEFEFE;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    margin-top: 100px;
+}
+
+.transactionHistory .headingBar,.walletContainer .headingBar {
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid #5499C7;
+    color: #5499C7;
+}
+
+.walletContainer .headingBarIcon{
+    background: url("../images/wallet.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+}
+
+#hourTransactionHistory .headingBarIcon{
+    background: url("../images/hour.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+}
+
+#financeTransactionHistory .headingBarIcon{
+    background: url("../images/finance.png");
+    background-repeat: no-repeat;
+    background-size: 75%;
+    background-position: center;
+}
+
+.transactionHistory td{
+    color: #4D515F;
+    font-size: 15px;
+    padding: 11px;
+    text-align: left;
+}
+
+.transactionHistory th {
+    color: #4D515F;
+    font-size: 20px;
+    padding: 11px;
+    min-width: 120px;
+    text-align: left;
+ }
+
+.headingBar h1{
+    margin-right: 20px;
+}
+
+.transactionHistory tr{
+    border-bottom:1px solid #CCCCCC;
+}
+
+.walletContainer h2{
+    font-size:24px;
+    margin:10px;
+}
+
+.walletContainer .hoursContainer span{
+    color:#E6E6E6;
+    font-size:18px;
+    margin:0;
+    display: block;
+}
+
+.walletContainer .hoursContainer .hour{
+    font-size:40px;
+    padding-top:15px;
+}
+
+
+.walletContainer .hoursContainer{
+    border-radius: 50%;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    margin:20px auto;
+    background: #2F2F32;
+    border: 10px solid #4E4E53;
+    border-top-color: #5499C7;
+    border-bottom-color:#5499C7;
+
+}

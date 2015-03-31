@@ -1,0 +1,180 @@
+#messageContainer{
+    padding:20px;
+    display: inline-block;
+}
+
+
+#messagedPeopleList,#messageBox{
+    float: left;
+    background: #ffffff;
+    margin-right:25px;
+    display: inline-block;
+    height:800px;
+}
+
+#messagedPeopleList li{
+    position: relative;
+    height:70px;
+    width:250px;
+    line-height: 35px;
+    border-bottom: 1px solid #DAE3E8;
+    padding:20px;
+    text-align: left;
+    padding-left:100px;
+}
+
+#messagedPeopleList li #userImage{
+    position: absolute;
+    top:calc(50% - 30px);
+    left:20px;
+    height:60px;
+    width:60px;
+    background: url("../images/1.png");
+    border:3px solid #E74C3C;
+    border-radius: 50%;
+    background-size: cover;
+    display: inline-block;
+}
+
+#messagedPeopleList li span{
+    display: block;
+}
+
+
+
+#messagedPeopleList li#selected #selectedBorderArrow{
+    position: absolute;
+    right:0px;
+    top:0;
+    height: 111px;
+    width:7px;
+    background:#E74C3C;
+}
+
+#messagedPeopleList #lastMessage{
+    color: #9AA2A2;
+}
+
+
+#messageBox{
+    position: relative;
+    width:700px;
+    border-left:7px solid #E74C3C;
+    padding:40px;
+    box-sizing: border-box;
+}
+
+#messageBox .sender,#messageBox .reciever{
+    display:block;
+    position: relative;
+    max-width:60%;
+    background:	#EC7063;
+    color: #ffffff;
+    float:left;
+    margin-left:70px;
+    margin-bottom:40px;
+    padding:20px;
+    text-align: left;
+    clear: both;
+}
+
+#messageBox .sender:before{
+    content:'';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:10px solid 	#EC7063;
+    position: absolute;
+    top:10px;
+    left:-10px;
+}
+
+#messageBox .sender .profileImage{
+    width:60px;
+    height:60px;
+    background: url("../images/1.png");
+    border:3px solid 	#EC7063;
+    border-radius:50%;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left:-90px;
+}
+
+
+
+#messageBox .reciever{
+    background:	#B4BDC6;
+    color: #ffffff;
+    float:right;
+    margin-right:70px;
+    text-align: left;
+    clear: both;
+}
+
+#messageBox .reciever:after{
+    content:'';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left:10px solid #B4BDC6;
+    position: absolute;
+    top:10px;
+    right:-10px;
+}
+
+#messageBox .reciever .profileImage{
+    width:60px;
+    height:60px;
+    background: url("../images/2.png");
+    border:3px solid #B4BDC6;
+    border-radius:50%;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    right:-90px;
+}
+
+
+#messageBox #messageInputBox{
+    position: absolute;
+    bottom:0;
+    left:0;
+    padding:20px;
+    width:100%;
+    box-sizing: border-box;
+    margin-bottom:50px;
+    border-top:1px solid #DAE3E8;
+}
+
+
+#messageInputBox textarea{
+    width:90%;
+    height:60px;
+    line-height:20px;
+    font-size:18px;
+}
+
+#messageInputBox button{
+    width:100px;
+    height:40px;
+    line-height: 40px;
+    background:#E74C3C;
+}
+
+#messageInputBox #inputBoxContainer{
+    position: relative;
+
+}
+
+#inputBoxContainer button{
+      position: absolute;
+      right:30px;
+      bottom:-50px;
+  }
+
+
+
+

@@ -1,0 +1,112 @@
+html{
+    background: #ffffff;
+}
+a{
+    color:#000;
+}
+.flinkHeader{
+    line-height: 56px;
+}
+
+.flinkNameHeading{
+    font-size:32px;
+    margin-left:20px;
+}
+
+.color1{
+    color:#AF7AC5;
+}
+
+.color2{
+    color:#52BE80;
+}
+
+.color3{
+    color:#EC7063;
+}
+
+section{
+text-align: center;
+}
+
+strong{
+    font-weight: bold;
+}
+
+.internalNavigation{
+    display:inline-block;
+    text-align: left;
+    margin-left:70px;
+    float: left;
+}
+
+.internalNavigation li{
+    margin:20px;
+    font-size:20px;
+    color: #465465;
+}
+
+.policyContainer{
+    display:inline-block;
+    padding:10px;
+    text-align: left;
+    width:800px;
+    border:2px solid #313D4C;
+    color: #465465;
+}
+
+.policyContainer .nameHeading{
+    font-size:26px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom:10px;
+}
+
+.privacyPolicyHeading{
+    font-size:30px;
+    display:block;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.policyContainer .content{
+    font-size: 15px;
+    line-height: 24px;
+    text-align: justify;
+    padding:30px;
+}
+
+
+.aboutContainer{
+    text-align: left;
+}
+
+
+.aboutContainer h1,.contactContainer h1{
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.aboutContainer h2,.contactContainer h2{
+    font-size: 28px;
+    margin: 20px 0 10px 0;
+}
+
+.aboutContainer p{
+    font-size: 15px;
+}
+
+.contactContainer,.aboutContainer{
+    line-height: 1.6;
+    width: 500px;
+    display: inline-block;
+    background: #fff;
+    color:#465465;
+    padding: 20px;
+    margin-bottom: 100px;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+.contactContainer h1{
+    text-align: left;
+}

@@ -1,0 +1,85 @@
+.lessonContainer{
+    background: #fff;
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+}
+
+.lessonContainer .lessonHeader{
+    border-bottom: 1px solid #ccc;
+}
+
+.lessonContainer .subject{
+    display: inline-block;
+    font-size: 32px;
+    margin: 20px;
+}
+
+.lessonContainer .subject .status{
+    font-size: 18px;
+}
+
+.lessonContainer .lessonInfo{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.lessonContainer .deadline{
+    display: inline-block;
+    margin: 20px 30px;
+    text-align: center;
+    color:#52BE80;
+}
+
+.lessonContainer .deadlineDate{
+    display: block;
+}
+
+.lessonContainer .noOfHours .hours{
+    display: block;
+}
+
+.lessonContainer .noOfHours{
+    display: inline-block;
+    margin: 20px 30px;
+    text-align: center;
+    color:#AF7AC5;
+}
+
+.lessonContainer .tutorAssigned{
+    display: inline-block;
+    margin: 20px 30px;
+    text-align: center;
+    color:#EC7063
+}
+
+.lessonContainer .tutorName{
+    display: block;
+}
+
+.lessonContainer .lessonDescription{
+    display: inline-block;
+    line-height: 1.4;
+    max-width: 700px;
+    margin: 20px;
+}
+
+.lessonContainer .lessonDescription h2{
+    font-size: 25px;
+    margin-bottom: 10px
+}
+
+.lessonContainer button{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.lessonContainer .buttonContainer{
+    margin: 20px;
+}
+
+.divisonBorder{
+    border-top: 1px solid #ccc;
+}

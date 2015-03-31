@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="javascripts/services/services.js"></script>
+    <script type="text/javascript" src="javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/message-style.css"/>
+</head>
+<body ng-controller="MenuCtrl">
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+        <li ng-show="!anyoneLoggedIn" class="navigationList">
+            <ul>
+                <li class="icon" id="profile" ng-class="{active: isActive('/profile.html')}"> <a href="#/profile.html">Profile</a></li>
+                <li class="icon" id="messages" >Messages</li>
+                <li class="icon" id="lessons" >Lessons</li>
+            </ul>
+        </li>
+        <li class="tutorChatList" ng-show="studentLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+
+<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+    <header>
+        <div class="options" ng-click="toggleMenu();" stop-event>
+            <div class="optionBar optionBar1"></div>
+            <div class="optionBar optionBar2"></div>
+            <div class="optionBar optionBar3"></div>
+
+        </div>
+
+
+
+
+             <input id="search" type="text" placeholder="Search for tutors by subject"/>
+             <div id="header-right-container">
+               <div id="login" ng-click="toggleLogin();" stop-event >
+                   Log In
+                   <login ng-show="loginOpened" stop-event></login>
+               </div>
+                 <div>|{{4+2}}</div>
+                 <a href="register.html"><div>Sign Up</div></a>
+             </div>
+        </header>
+
+
+
+    <section>
+        <div id="messageContainer" ng-controller="MessageCtrl">
+            <div id="messagedPeopleList">
+                <ul>
+                    <li id="selected"><div id="userImage"></div><span id="userName">Ankit Mehta</span><span id="lastMessage">kjdndv   jdbvsbv kddbvuinv ...</span><span id="lastMessageTime"></span><div id="selectedBorderArrow"></div></li>
+                    <li>Aaditya Lohia</li>
+                </ul>
+            </div>
+            <div id="messageBox">
+                <div ng-class="sender ? 'sender' : 'reciever'">
+                    <div class="profileImage"></div>
+                    <span class="message">Hello! How can I help you?</span>
+                </div>
+                <div ng-class="sender ? 'reciever' : 'sender'">
+                    <div class="profileImage"></div>
+                    <span class="message">No! I dont want your help.</span>
+                </div>
+                <div id="messageInputBox">
+                    <div id="inputBoxContainer"><textarea></textarea><button type="submit">Send</button></div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <footer></footer>
+</div>
+
+</body>
+</html>

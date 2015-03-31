@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="javascripts/services/services.js"></script>
+    <script type="text/javascript" src="javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/tutor-public-profile-style.css"/>
+</head>
+<body ng-controller="MenuCtrl">
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+        <li ng-show="!anyoneLoggedIn" class="navigationList">
+            <ul>
+                <li class="icon" id="profile" ng-class="{active: isActive('/profile.html')}"> <a href="#/profile.html">Profile</a></li>
+                <li class="icon" id="messages" >Messages</li>
+                <li class="icon" id="lessons" >Lessons</li>
+            </ul>
+        </li>
+        <li class="tutorChatList" ng-show="studentLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+
+<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+    <header>
+        <div class="options" ng-click="toggleMenu();" stop-event>
+            <div class="optionBar optionBar1"></div>
+            <div class="optionBar optionBar2"></div>
+            <div class="optionBar optionBar3"></div>
+
+        </div>
+
+
+
+
+        <input id="search" type="text" placeholder="Search for tutors by subject"/>
+        <div id="header-right-container">
+            <div class="headerLoginContainer"><div id="login" ng-click="toggleLogin();" stop-event >
+                Log In
+                <login ng-show="loginOpened" stop-event></login>
+            </div>
+           <span>|</span>
+            <a href="register.html"><div>Sign Up</div></a>
+                </div>
+            <div class="headerNavListContainer">
+                <ul class="headerNavList">
+                    <li class="navNotif"></li>
+                    <li class="navMessage"></li>
+                    <li class="navLogout"></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </header>
+
+
+
+    <section>
+            <div id="tutorPublicProfileContainer">
+                <div class="profileHeader">
+                    <div class="imageContainer"><div class="profileImage"></div></div>
+                    <div class="basicDetails">
+                        <div class="tutorName"><span>Saumya Sharma</span></div>
+                        <div class="tutorCollege"><span>Birla Institute of Technology & Science</span></div>
+                        <div class="tutorMajor"><span>Major: Mathematics</span></div>
+                    </div>
+                    <div class="statsContainer">
+                        <div class="stats likedBy"><span>Liked by <span class="statNumber">60</span> Students</span></div>
+                        <div class="stats reply"><span>Likelihood of reply <span class="statNumber">90</span>Percent</span></div>
+                        <div class="stats responseTime"><span>Response time <span class="statNumber"><5</span>Minutes</span></div>
+                    </div>
+                </div>
+                <div class="profileDetails">
+                    <div class="profileNavigation">
+                        <ul>
+                            <li>Overview</li>
+                            <li>Reviews</li>
+                        </ul>
+                    </div>
+                    <div class="displayDetails">
+                        <article><h2>Teaching Experience</h2>
+                        <p>After my college graduation, I worked under an non government organisation where I was involved in teaching 10th-12th school students, especially children belonging to financially weak backgrounds who are unable to afford tutors outside school.<br>I also worked as lecturer in my college.</p>
+                        </article><article><h2 id="tut-interests" class="tutor-headline">Extracurricular Interests</h2>
+                        <p>I am a native of Delhi, capital of India. Born and raised there, I had my elementary education in Delhi public school and moved to Manipal for graduation. <br>I like to read and act. I dream of making it big in Bollywood and wish to finance my dream through  this field.</p>
+                    </article></div>
+                    <div class="tutoredSubjects">
+                        <h2>Subjects Tutored</h2>
+                        <span class="subjects">Subject1</span><span class="subjects">Subject2</span><span class="subjects">Subject3</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>©2015 HelpDU. All rights reserved.</p>
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                    <a href="">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

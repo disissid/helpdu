@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="testApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+    <script src="javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="javascripts/lib/angular-file-upload.min.js"></script>
+    <script src="javascripts/services/services.js"></script>
+    <script type="text/javascript" src="javascripts/test-app.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/test-style.css"/>
+</head>
+<body>
+    <section  >
+
+        <div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper block">
+            <form name="reqLessonForm"  ng-submit="submitData()" novalidate>
+                <select ng-model="subject" required>
+                    <option selected>Physics</option>
+                    <option>Chemistry</option>
+                    <option>Maths</option>
+                </select>
+                <textarea ng-model="message" required></textarea><br/>
+                <div id="upload" ng-controller="FileCtrl">
+                    <input type="file" ng-file-select="onFileSelect($files)" multiple required>
+                </div>
+                <input id="deadline" type="number" placeholder="Deadline" name="input" ng-model="deadline"
+                       min="0" max="99" required>
+                <input type="number" placeholder="No. of Hours" ng-model="hours" min="0" max="99" required/>
+                <select ng-model="mode" required>
+                    <option value="" default selected>select mode</option>
+                    <option selected="selected" value="0">private</option>
+                    <option value="1">public</option>
+                </select>
+                <button id="reqLessonButton" type="submit" ng-disabled="reqLessonForm.$invalid || !uploadedFile.fileUploaded">Request Lesson</button>
+            </form>
+        </div>
+
+
+
+
+        <div class="block" ng-controller="TestController">
+            <form name="" ng-submit="submitData('time')">
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{response.dumpData}}</span>
+            </div>
+
+        </div>
+
+        <div class="block" ng-controller="TestController">
+        <form name="" ng-submit="submitData('lessonSubject')">
+            <select ng-model="subject">
+                <option selected>Physics</option>
+                <option>Chemistry</option>
+                <option>Maths</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="dumpBox">
+            <span>{{response.dumpData}}</span>
+        </div>
+        </div>
+
+        <div class="block" ng-controller="TestController">
+            <form name="" ng-submit="submitData('lock')">
+                <input type="text" ng-model="lessonId"/>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{response.dumpData}}</span>
+            </div>
+        </div>
+
+        <div class="block" ng-controller="TestController">
+            <form name="" ng-submit="submitData('transfer')">
+                <input type="text" ng-model="lessonId"/>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{response.dumpData}}</span>
+            </div>
+        </div>
+
+        <div class="block" ng-controller="TestController">
+            <form name="" ng-submit="submitData('unlock')">
+                <input type="text" ng-model="lessonId"/>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{response.dumpData}}</span>
+            </div>
+        </div>
+
+        <div class="block" ng-controller="TestController">
+            <form name="" ng-submit="submitData('delete')">
+                <input type="text" ng-model="lessonId"/>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{response.dumpData}}</span>
+            </div>
+        </div>
+
+        <div class="block" ng-controller="TestController">
+            <form name="" ng-submit="submitData('completed')">
+                <input type="text" ng-model="lessonId"/>
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{response.dumpData}}</span>
+            </div>
+        </div>
+
+
+        <div class="block" ng-controller="UpdateController">
+            <form name="" ng-submit="submitData()">
+                <button type="submit">Submit</button>
+            </form>
+            <div class="dumpBox">
+                <span>{{dumpData}}</span>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+</html>

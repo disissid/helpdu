@@ -1,0 +1,27 @@
+<!--<!DOCTYPE html>
+<html ng-app="loginApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+    <script type="text/javascript" src="javascripts/login-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+</head>
+<body>
+{{4+2}}-->
+    <div ng-app="loginApp">
+    <div id="loginContainer" ng-controller="LoginController">
+        <h1>Login</h1>
+        <span>You already have an account? Great! Login here.</span>
+        <form name="loginForm" ng-submit="submitData()" novalidate>
+            <input type="email" name="emailAddress" ng-model="user.email" placeholder="Email Address" required/> <br/>
+            <input name="password" ng-model="user.password" type="password" placeholder="Password" ng-minlength=5 required/><br/>
+            <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+        </form>
+
+        <span>Forgot Password? It's ok.<span id="recoverPassword">RECOVER HERE >></span></span>
+    </div>
+    </div>
+<!--</body>
+</html>-->

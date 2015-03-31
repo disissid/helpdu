@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="adminApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="./javascripts/lib/jquery.min.js"></script>
+    <script type="text/javascript" src="./javascripts/lib/angular.min.js"></script>
+    <script type="text/javascript" src="./javascripts/admin-app.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/admin-login-style.css"/>
+    <script type="text/javascript" src="./javascripts/lib/custombox.js"></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/custombox.css"/>
+
+</head>
+<body ng-controller="MainCtrl" ng-init="getAdminData()">
+<div ng-show="Authenticated">
+    <header ng-controller="HeaderCtrl">
+            <ul id="navigationList">
+            <a href="#" ng-click="submitData()"><li>Subjects</li></a>
+                <li>Tutors</li>
+            <a href="/logout"><li>Log Out</li></a>
+            </ul>
+    </header>
+    <section>
+        <div class="wrapper">
+        <div id="subjectListContainer" ng-controller="SubjectListCtrl">
+            <button class="addSubject" id="element" type="submit">+Add Subject</button>
+            <ul id="subjectList">
+                <li ng-repeat="subject in subjects"><button class="deleteSubject" ng-click="removeSubject($index)" type="submit">x</button>{{subject.subjectName}}</li>
+            </ul>
+            <div id="modal">
+            <form name="addSubjectForm" ng-submit="submitData();" novalidate>
+                <input type="text" ng-model="subjectName" required/> <br/>
+                <button onclick="Custombox.close()" class="addSubject" type="submit">+Add Subject</button>
+            </form>
+            </div>
+        </div>
+        </div>
+
+    </section>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('element').addEventListener('click', function ( e ) {
+            Custombox.open({
+                target: '#modal',
+                effect: 'fadein'
+            });
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>
