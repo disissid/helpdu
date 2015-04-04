@@ -10,15 +10,28 @@
     <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
     <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
     <script type="text/javascript" src="../javascripts/services/services.js"></script>
+    <script type="text/javascript" src="../javascripts/filters/filters.js"></script>
     <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
     <script type="text/javascript" src="../javascripts/index-app.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
     <link href="../stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
     <link rel="stylesheet" type="text/css" href="../stylesheets/css-reset.css"/>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/new-style.css"/>
     <link rel="stylesheet" type="text/css" href="../stylesheets/tutor-reg-steps.css"/>
 </head>
 <body ng-controller="MenuCtrl">
+
+<header>
+    <div class="nameHeading"><span ng-class="newColor1">Help</span><span class="newColor">DU</span></div>
+    <ul class="newColor1">
+        <li>About</li>
+        <li>Apply as a Tutor</li>
+        <li>Contact</li>
+    </ul>
+</header>
+
+<!--
 <aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
     <ul ng-controller="NavCtrl">
         <li class="helpduNameHeading">HelpDU</li>
@@ -35,11 +48,11 @@
             </ul>
         </li>
     </ul>
-</aside>
+</aside>-->
 
 
 <div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
-    <header>
+    <!--<header>
         <div class="options" ng-click="toggleMenu();" stop-event>
             <div class="optionBar optionBar1"></div>
             <div class="optionBar optionBar2"></div>
@@ -59,7 +72,7 @@
             <span>|</span>
             <a href="register.html"><div>Sign Up</div></a>
         </div>
-    </header>
+    </header>-->
 
 
 
@@ -69,16 +82,17 @@
                 <div class="tutorRegistrationStep1 tutorRegistrationSteps" ng-show="step == 1">
 
                         <form name="confirmInfoForm1" ng-submit="submitData()" novalidate>
-                            <div class="headingBar"><div class="headingBarIcon"></div><h1>Confirm Information</h1>
+                            <div class="headingBar"><div class="headingBarIcon"></div><h1 class="newFont newColor">Confirm Information</h1>
                             </div>
                             <div class="paddingBox">
-                            <span>Name:</span><input type="text" name="name"  ng-model="newTutor.name" placeholder="Name"  required ng-focus/><br/>
-                            <span>Email:</span><input type="email" name="email"  ng-model="newTutor.email" placeholder="Email Address" required ng-focus/><br/>
-                                <span>Institute Email:</span><input type="email" name="email"  ng-model="newTutor.instiEmail" placeholder="Email Address" required ng-focus/><br/>
-                                <span>Institute Name:</span><input type="text" name="instituteName" ng-model="newTutor.instiName"  placeholder="Name of the Institute you are studying in"  required ng-focus/><br/>
-                                <span>Major:</span><input type="text" name="major"  ng-model="newTutor.major" placeholder="Major"  required ng-focus/><br/>
-                                <span>Year of Graduation:</span><input type="text" name="year" ng-model="newTutor.yearOfGrad" placeholder="Year of Graduation"  required ng-focus/><br/>
-                            </div><div class="buttonContainer"><button type="submit" ng-disabled="confirmInfoForm1.$invalid">Confirm</button></div>
+                            <span>Name</span><input type="text" name="name"  ng-model="newTutor.name"   required ng-focus/><br/>
+                            <span>Email</span><input type="email" name="email"  ng-model="newTutor.email"  required ng-focus/><br/>
+                                <span>Gender</span><div class="radioButtons"><label><input type="radio" name="sex" ng-model="newTutor.gender" value="male">Male</label><label><input type="radio" name="sex" ng-model="newTutor.gender" value="female">Female</label></div></br>
+                                <span>Institute Email</span><input type="email" name="email"  ng-model="newTutor.instiEmail"  required ng-focus/><br/>
+                                <span>Institute Name</span><input type="text" name="instituteName" ng-model="newTutor.instiName"    required ng-focus/><br/>
+                                <span>Major</span><input type="text" name="major"  ng-model="newTutor.major"   required ng-focus/><br/>
+                                <span>Year of Graduation</span><input type="text" name="year" ng-model="newTutor.yearOfGrad"  required ng-focus/><br/>
+                            </div><button  type="submit" ng-disabled="confirmInfoForm1.$invalid">Confirm</button>
                         </form>
                 </div>
 

@@ -1,0 +1,1516 @@
+
+*,body,html{
+    font-weight: 400;
+    font-family:'Open Sans', sans-serif;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+    display: none !important;
+}
+
+
+
+body,html{
+    height:100%;
+    background:#E6E6E6;
+}
+
+html.indexPage{
+    background: #ffffff;
+}
+
+
+a:link{
+    color: inherit;
+}
+
+body{
+    background: inherit;
+    margin:0;
+}
+
+input{
+    border-radius: 0px;
+    width:280px;
+    height:30px;
+    padding:5px;
+    font-size: 16px;
+}
+
+button{
+    font-size: 19px;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background:#5DADE2;
+    width:290px;
+    height: 45px;
+    line-height: 45px;
+}
+
+
+header{
+    position: fixed;
+    top: 15px;
+    left:0;
+    z-index: 99999;
+    width:100%;
+    height: 70px;
+    line-height: 70px;
+    transition:all 0.3s linear 0.1s;
+
+}
+
+header .nameHeading{
+    font-size: 60px;
+    position: absolute;
+    left: 60px;
+    z-index: 9999;
+    font-family: 'Homenaje', sans-serif;
+    display: inline-block;
+}
+
+header ul{
+    float: right;
+}
+
+header ul li{
+    display: inline-block;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.min header{
+    background: #fff;
+    top:0px;
+    height:60px;
+    line-height: 60px;
+}
+
+.min header .nameHeading{
+    font-size:50px;
+}
+
+
+/*
+header div{
+    display: inline-block;
+    color:#7F7F7F;
+}
+
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    background: #ffffff;
+    margin: 0;
+    font-size: 18px;
+    height:56px;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    position: fixed;
+    z-index: 2;
+    -webkit-transition: all 0.5s ease;
+}
+
+header .options{
+    border-right: 1px #B8B8B8 solid;
+    display:inline-block;
+    box-sizing: border-box;
+    padding-top:20px;
+    padding-right:10px;
+    margin:0 10px;
+    position: fixed;
+    z-index: 9999;
+    height: 56px;
+}
+
+
+header .optionBar{
+    border:2px solid #7f7f7f;
+    width:25px;
+    display:block;
+    margin:2px;
+
+}
+
+
+header input#search{
+    width:500px;
+    height:26px;
+    background: #FFFFFF;
+    font-size: 16px;
+    border:1px solid #EAEBF0;
+    padding:5px;
+    position:absolute;
+    top:calc(50% - 18px);
+    left:56px;
+    border:none;
+}
+
+header input#search:focus{
+    outline:none;
+}
+
+
+header #header-right-container{
+    position: absolute;
+    right:0;
+    top:0;
+    height:56px;
+    width:200px;
+    line-height: 56px;
+    box-sizing: border-box;
+    padding-left:40px;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+header #header-right-container #login{
+    width:56px;
+    position:relative;
+}
+
+.headerLoginContainer{
+    display: none;
+}
+
+
+
+/*header{
+    position: fixed;
+    top:0;
+    z-index: 2;
+    width:100%;
+}
+header #register{
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-family:'whateverItTakes','Open Sans', sans-serif;
+    color: white;
+    font-size: 30px;
+}*/
+
+#nameHeading{
+    position:absolute;
+    top:10px;
+    left:calc(50% - 62.5px);
+    font-family:'Open Sans', sans-serif;
+    color: #FFFFFF;
+    font-size: 60px;
+}
+
+.indexOptions{
+    display:inline-block;
+    height:56px;
+    box-sizing: border-box;
+    padding-top:20px;
+    padding-right:10px;
+    margin:0 10px;
+    position: fixed;
+    top:0;
+    left:0;
+    -webkit-transition: all 0.5s ease;
+    z-index: 9999;
+    display: none;                                                  /*new index file*/
+}
+
+.rightControls{
+    display:inline-block;
+    height:56px;
+    box-sizing: border-box;
+    padding-top:20px;
+    padding-right:10px;
+    margin:0 10px;
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 9999;
+    display: none;                                                  /*new index file*/
+}
+
+.rightControls .controls{
+    display: inline-block;
+    width:32px;
+    height:32px;
+    margin:0 5px;
+}
+.rightControls .notifControl{
+    background: url("../images/white-bell.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.rightControls .messageControl{
+    background: url("../images/white-email.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rightControls .profileControl{
+    background: url("../images/white-user1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-right-container .rightControls .notifControl{
+    background: url("../images/bell.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-right-container .rightControls .messageControl{
+    background: url("../images/email.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-right-container .rightControls .profileControl{
+    background: url("../images/user1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header-right-container .rightControls{
+    padding-top: 8px;
+}
+
+#header-right-container .notifControl .notifControlTri{
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid #fff;
+    border-left: 16px solid transparent;
+    position: absolute;
+    top: -16px;
+    right: 67px;
+}
+
+#header-right-container .notifControlBox{
+    position: absolute;
+    top: 64px;
+    left: -200px;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+#header-right-container .messageControlBox{
+    position: absolute;
+    top: 73px;
+    left: -200px;
+    width: 300px;
+    height: 350px;
+    background: #fff;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+.messageControlTri{
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid #fff;
+    border-left: 16px solid transparent;
+    position: absolute;
+    top: -16px;
+    right: 13px;
+
+}
+
+
+
+
+.optionBar{
+    border:2px solid #F7FEF7;
+    width:25px;
+    display:block;
+    margin:2px;
+
+}
+
+
+#loginContainer #loginContainerTri {
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid #fff;
+    border-left: 16px solid transparent;
+    position:absolute;
+    top:-16px;
+    right:20px;
+}
+
+
+
+aside{
+    left:0;
+    top:0;
+    z-index:1;
+    height:100%;
+    width:250px;
+    position:fixed;
+    background:#fff;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+aside.asideOpen{
+    display: block;
+}
+
+
+aside .navigationList li,aside .tutorChatList li{
+    height:20px;
+    position:relative;
+    padding: 6px 0;
+    display: block;
+    text-decoration: none;
+    line-height:20px;
+    color:#808080;
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+aside li.helpduNameHeading{
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    font-size:35px;
+    font-family:'Open Sans', sans-serif;
+    padding:0;
+}
+
+
+
+
+aside.asideClose.notClicked{
+    display:none;
+
+}
+
+aside .navigationList,aside .tutorChatList{
+    padding: 0 10px;
+    margin: 10px;
+}
+
+
+aside li#lessons{
+    background: url("../images/lesson2.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 0 50%;
+
+}
+
+
+
+
+aside li#messages{
+    background: url("../images/email2.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 0 50%;
+}
+
+aside li#notifications{
+    background: url("../images/bell1.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 0 50%;
+}
+
+aside li#billing{
+    background: url("../images/finance2.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 0 50%;
+}
+
+aside li#buyHours{
+    background: url("../images/wallet2.png");
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 0 50%;
+}
+
+aside ul.navigationList li{
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 0 50%;
+}
+
+aside li.active{
+    background: #ffffff;
+}
+
+.authenticationCheckBox{
+    min-height:100%;
+    height:100%;
+}
+
+#mainContentWrapper{
+    min-height:100%;
+    height: 100%;
+    width:100%;
+    position: relative;
+    left:0;
+    top:56px;
+    z-index:2;
+    width:100%;
+    -webkit-transition: all 0.5s ease;
+    background:inherit;
+}
+
+.indexPage#mainContentWrapper{
+    top:0;
+}
+
+#mainContentWrapper.asideClose{
+      width:100%;
+
+  }
+
+/*
+
+#mainContentWrapper.asideOpen,#mainContentWrapper.asideOpen header{
+    width:calc(100% - 250px);
+    left:250px;
+}
+*/
+
+#mainContentWrapper.asideOpen .indexOptions{
+    left: 250px;
+}
+
+
+
+
+section{
+    background: inherit;
+    min-height:100%;
+    margin-bottom: -142px;
+    padding-top:100px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    border-left:1px solid #ccc;
+}
+
+#indexSection{
+    top:0;
+    padding-top: 0;
+}
+
+section:after {
+    content: "";
+    display: block;
+}
+
+.searchBarCover {
+    width: 100%;
+    height: 95%;
+}
+
+.searchBarWrapper{
+    width: 100%;
+    background: url("../images/New%20folder/1.jpg") #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    position: fixed;
+    height: 95%;
+}
+
+.searchBarWrapper .nameHeading{
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    left: 60px;
+    z-index: 9999;
+    font-family: 'Homenaje', sans-serif;
+}
+
+.searchBarWrapper .color1{
+    color: #fff;
+}
+
+.searchBarWrapper .color2{
+    color:#ED1F23;
+}
+
+.searchBarWrapper .searchBar{
+    width:800px;
+    margin:0 auto;
+    position: absolute;
+    bottom:20px;
+    left:calc(50% - 400px);
+    display: none;                                                              /*new index file*/
+}
+
+.opacityCover{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+.searchBarWrapper .opacityCover{
+    background:#000000;
+    opacity:0.7;
+}
+
+.imageBreak .opacityCover{
+    background:url("../images/New%20folder/pattern.png") #000;
+    opacity: 0.3;
+}
+
+.searchBarWrapper .infoBoxContainer{
+    position: absolute;
+    top: calc(50% - 60px);
+    left: calc(50% - 315px);
+    font-weight: 400;
+    text-align: center;
+}
+
+.searchBarWrapper .infoBox{
+color: #ffffff;
+    /* width: 600px; */
+    display: inline-block;
+}
+
+.searchBarWrapper .infoBox h1{
+    font-size: 96px;
+    line-height: 1.4;
+    /* margin: 10px 0; */
+    font-family: 'Homenaje', sans-serif;
+    display: block;
+}
+
+.searchBarWrapper .infoBox p{
+    line-height: 1.4;
+    font-size:20px;
+}
+
+.searchBarWrapper .searchBar input{
+    display: inline-block;
+}
+
+.searchBarWrapper .searchBar input.search{
+    background:#FFFFFF;
+    height: 40px;
+    width:600px;
+    padding:5px;
+}
+
+.searchBarWrapper .searchBar input.searchBtn{
+    width: 144px;
+    height: 56px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    border:none;
+    box-sizing: border-box;
+    outline: 0;
+    background:#442178;
+    margin-left:10px;
+}
+
+.loginBackgroundBlur{
+    width:340px;
+    position:absolute;
+    top:0px;
+    right:0px;
+    height: 345px;
+    z-index: 1;
+    background:#000;
+    opacity: 0.8;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+#loginContainer{
+    color:#D8E0E1;
+    width:290px;
+    padding:20px;
+    position:absolute;
+    top: 72px;
+    right:0px;
+    font-weight: 400;
+    font-family:'Open Sans', sans-serif;
+    z-index: 9999;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    display:none;                                                               /*new index file*/
+}
+
+.homePageLogin #loginContainer{
+    position: static;
+    background:#ffffff;
+    margin-top:20px;
+}
+
+.homePageLogin{
+    display: inline-block;
+}
+
+
+#loginContainer input{
+    border-radius: 0px;
+    background:none;
+    border:none;
+    border-bottom:2px solid grey;
+    width:280px;
+    height:30px;
+    padding:5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+#loginContainer input:focus {
+    outline: none;
+}
+
+
+
+#loginContainer input.ng-invalid.ng-dirty{
+    width:278px;
+    height:28px;
+}
+
+#loginContainer input.ng-valid{
+
+    width:278px;
+    height:28px;
+}
+
+#loginContainer input.ng-focused.ng-invalid{
+    width:280px;
+    height:30px;
+}
+
+
+#loginContainer input.ng-focused{
+    border:none;
+    box-shadow:none;
+    width:280px;
+    height:30px;
+}
+
+
+#loginContainer span{
+    color:#C5C5C5;
+    font-size: 16px;
+}
+
+#loginContainer .divison{
+    margin-top:5px;
+}
+
+#loginContainer span a:link{
+    color:#C5C5C5;
+}
+
+#loginContainer span a:hover{
+    color:#000000;
+}
+
+#loginContainer .divison{
+    display: block;
+}
+
+#loginContainer button{
+    font-size: 22px;
+    text-decoration: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background: #EC7063;
+    width:290px;
+    height: 45px;
+    line-height: 45px;
+    margin-top:10px;
+}
+
+#loginContainer button.disabled{
+    background:#c4e3f3;
+}
+
+#loginContainer button.enabled{
+    cursor:pointer;
+}
+
+
+#loginContainer button.fb{
+    background:#405e9c;
+    margin-bottom: 5px;
+}
+
+
+#loginContainer img{
+   margin-left:calc(50% - 100px);
+}
+
+#loginContainer.registerContainer{
+  position: static;
+    margin:0 auto;
+    text-align: center;
+    background:#ffffff;
+    color:#000;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+#loginContainer.registerContainer input{
+    margin-bottom: 10px;
+    color:#000;
+}
+
+#loginContainer.registerContainer input:focus{
+    border-bottom:2px solid #405e9c;
+}
+
+.regFormContainer,.fbRegContainer{
+    display: inline-block;
+}
+
+
+.registerContainer h1{
+    font-size:32px;
+}
+.registerContainer button.fb{
+    margin-bottom: 20px;
+}
+
+.registerContainer .headingBar{
+    border-bottom: 2px solid #e67e22;
+    color: #e67e22;
+    height: 70px;
+    line-height: 70px;
+}
+
+.registerContainer .headingBar h1{
+    font-size: 32px;
+}
+
+.registerContainer .headingBarIcon{
+    width: 80px;
+}
+
+#loginContainer .regFormContainer button.disabled{
+    background: #F2BE90;
+}
+
+#loginContainer .regFormContainer button{
+    background: #e67e22;
+    margin-top:0;
+    width: 286px;
+}
+
+#loginContainer .regFormContainer .buttonContainer{
+    border:2px solid #e67e22;
+    margin-top:30px;
+}
+
+
+
+.howItWorks{
+    /* margin: 70px; */
+    background: #f4f4f4;
+}
+
+.howItWorks .steps{
+    display: inline-block;
+    width: 33.1%;
+    height: 400px;
+    line-height: 100px;
+    /* margin: 20px 70px; */
+    /* border-radius: 5px; */
+    border-right: 1px solid #ccc;
+    background: #F4F4F4;
+    box-size: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    /* float: left; */
+    transition:all 0.3s linear 0.3s;
+}
+
+.howItWorks h2{
+    font-size: 36px;
+    line-height: 1.1;
+    display: none;
+}
+
+.steps .stepImage{
+    margin:10px 0;
+    height:200px;
+    height: 130px;
+}
+
+.searchTutor.steps .stepImage{
+    background: url("../images/New%20folder/24-71.png")  no-repeat center;
+    background-size: contain;
+    transition:all 0.3s linear 0.1s;
+}
+
+.steps .stepDescription{
+    font-size: 15px;
+    height: 80px;
+    line-height: 30px;
+    margin-top: 50px;
+    color: #484848;
+    transition:all 0.3s linear 0.1s;
+}
+
+.steps .stepHeading {
+    color: #ED1F23;
+    font-family: 'Homenaje', sans-serif;
+    font-size: 37px;
+    transition:all 0.3s linear 0.1s;
+}
+
+.steps:hover{
+    background: #ED1F23;
+}
+
+.steps:hover .stepHeading,.steps:hover .stepDescription{
+    color:#fff;
+}
+
+.steps:hover .stepHeading,.steps:hover .stepImage{
+    -webkit-animation: mymove 0.8s ease-in-out 0.1s; /* Chrome, Safari, Opera */
+    animation: mymove 0.8s ease-in-out 0.1s;
+    position: relative;
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymove {
+    0%   {top: 0px;}
+    50%  {top: -20px;}
+    100% {top: 0px;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    0%   {top: 0px;}
+    50%  {top: -20px;}
+    100% {top: 0px;}
+}
+
+
+.imageBreak{
+    width:100%;
+    height:500px;
+    position:relative;
+}
+
+.imageBreak1{
+    background: url("../images/New%20folder/4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imageBreak2{
+    background: url("../images/New%20folder/6.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.imageBreak3{
+    background: url("../images/New%20folder/2.jpg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.requestLesson.steps .stepImage{
+    background: url("../images/New%20folder/best1.png")  no-repeat center;
+    background-size: contain;
+}
+
+.homeworkHelp.steps .stepImage{
+    background: url("../images/New%20folder/personalize1.png")  no-repeat center;
+    background-size: contain;
+}
+
+.studentReviews{
+    background: #E9EFF4;
+    padding: 60px 0 80px;
+}
+
+.studentReviews h2{
+  font-size: 36px;
+    line-height: 1.1;
+}
+
+.studentReviews .review{
+    display: inline-block;
+    margin-left:40px;
+}
+
+.studentReviews .quote-body{
+    position: relative;
+    display: inline-block;
+    margin-top:200px;
+    width:500px;
+    line-height: 1.4;
+
+}
+
+.studentReviews .quote-body .quote{
+    border: none;
+    padding: 30px;
+    position: relative;
+    box-shadow: none;
+    font-size: 16px;
+    background: #fff;
+    display: inline-block;
+    color: #9D9CB8;
+}
+
+.reviewedTutor{
+    position: absolute;
+    top:-95px;
+
+}
+
+.reviewedTutor .tutorImage{
+    background:url("../images/1.png");
+    height:90px;
+    width:90px;
+    background-size:cover ;
+    border-radius: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.review2 .reviewedTutor .tutorImage{
+    background: url("../images/2.png");
+    background-size: cover;
+}
+
+.reviewedTutor .tutorDescription{
+    display: inline-block;
+    text-align: left;
+    height:90px;
+    line-height:30px;
+    margin-left: 20px;
+}
+
+.reviewedTutor .tutorDescription .tutorName{
+    font-size:19px;
+    color:#6ABB4F;
+    font-weight: bold;
+}
+
+.reviewedTutor .tutorDescription .tutorCollege{
+    color:#909CB1;
+}
+
+
+
+
+
+
+
+
+
+
+.requestLessonButton#element{
+    position: absolute;
+    top:30px;
+    right:30px;
+}
+
+
+.formWrapper{
+    background: #FEFEFE;
+    box-shadow: 0 0 5px 1px #000000;
+    display: inline-block;
+    padding:20px;
+    margin-top:20px;
+    margin-bottom: 70px;
+    text-align: left;
+}
+
+.formWrapper input{
+    margin-bottom: 20px;
+
+}
+
+.formWrapper .headingBar{
+    border-bottom:2px solid #5DADE2;
+    color:#5DADE2;
+}
+
+.formWrapper .headingBarIcon{
+    background: url("../images/lesson1.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+.formWrapper .buttonContainer{
+    display: inline-block;
+    padding: 2px;
+    border: 2px solid #2F9AD5;
+    margin-left: calc(50% - 149px);
+    margin-top: 20px;
+}
+
+
+.formWrapper button{
+    border:none;
+    background:#2F9AD5;
+    color:#ffffff;
+}
+
+.formWrapper button.disabled{
+    background:#ACD7EE;
+}
+
+
+.headingBar{
+    border-bottom:2px solid #76AF3C;
+    color:#76AF3C;
+    width:100%;
+    position:relative;
+    height: 50px;
+    line-height: 50px;
+    width:calc(100% + 40px);
+    top:-20px;
+    left:-20px;
+}
+
+.headingBarIcon{
+    width:50px;
+    height:100%;
+    display: inline-block;
+    float: left;
+}
+
+.headingBar h1{
+    float: left;
+    display: inline-block;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+
+#tutorRegisterFormWrapper .headingBar{
+    position: relative;
+    top:-25px;
+    left:-34px;
+    width: 108%;
+}
+
+#requestLessonFormWrapper textarea{
+    height:200px;
+    width:800px;
+    margin-bottom: 10px;
+}
+#requestLessonFormWrapper #upload{
+    background: url("../images/attach.png");
+    background-repeat: no-repeat;
+    background-position: 5px 50%;
+    background-size: 18px;
+    color:#000000;
+    display:inline-block;
+    overflow: hidden;
+    width:200px;
+    height:30px;
+    padding-left:30px;
+    font-size: 18px;
+    line-height: 30px;
+    cursor: pointer;
+    position: relative;
+    font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#requestLessonFormWrapper #upload input[type="file"]{
+    display: block !important;
+    width: 200px !important;
+    height: 30px !important;
+    opacity:0 !important;
+    overflow: hidden !important;
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+#requestLessonFormWrapper #deadline{
+    margin-right:20px;
+}
+
+#requestLessonFormWrapper select{
+    border-radius: 0px;
+    width:290px;
+    height:40px;
+    padding:5px;
+    font-size: 16px;
+    margin-bottom:20px;
+}
+
+.lessonsTable{
+    display:inline-block;
+    background: #FEFEFE;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    margin-top:100px;
+}
+
+
+
+.lessonsTable .headingBar{
+    width: 100%;
+    top:0;
+    left:0;
+    border-bottom:2px solid #EC7063;
+    color:#EC7063;
+}
+
+.lessonsTable .headingBarIcon{
+    background: url("../images/lesson.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+.lessonsTable tr{
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.lessonsTable td{
+    color: #4D515F;
+    font-size: 15px;
+    padding: 11px;
+    text-align: left;
+}
+
+.lessonsTable th{
+    color: #4D515F;
+    font-size: 20px;
+    padding: 11px;
+    min-width: 120px;
+    text-align: left;
+}
+
+.howItWorks2{
+    width:100%;
+    height:500px;
+    text-align: center;
+}
+
+.whyHelpdu{
+    background: #fff;
+}
+
+.whyHelpdu .contentBox .stat {
+    display: inline-block;
+    font-size: 50px;
+    margin-right:10px;
+}
+
+.whyHelpdu .contentBox .workStepDescription{
+    font-size: 16px;
+}
+
+.whyHelpdu .contentBox .workStepHeading{
+    font-size: 26px;
+}
+
+.howItWorks2 .headingBox{
+    border-right:1px dotted #000;
+}
+
+.howItWorks2 .headingBox,.howItWorks2 .contentBox{
+    display: inline-block;
+    width: 49%;
+    float: left;
+    height: 400px;
+    position: relative;
+    top: 50px;
+}
+
+.howItWorks2 .heading{
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    top: calc(50% - 59px);
+}
+
+.howItWorks2 .startHeading{
+    font-size: 49px;
+}
+
+.howItWorks2 .endHeading{
+    font-size: 59px;
+}
+
+.howItWorks2 .heading .lowerBroadBorder{
+    width: 75px;
+    height: 10px;
+    background-color: #ed1f23;
+}
+
+.contentBox ul{
+    text-align: left;
+    margin-left: 120px;
+    width: 550px;
+    position: absolute;
+    top: calc(50% - 188px);
+}
+
+.contentBox .workStepHeading {
+    font-size: 23px;
+    /* margin: 10px 0; */
+    line-height: 1.6;
+}
+
+.contentBox .workStepHeadingIcon{
+    position: absolute;
+    top: 5px;
+    left: -60px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-size: 24px;
+}
+
+.modal.indexFbRegister{
+    background: #fff;
+    border-radius:5px;
+}
+
+.indexFbRegister .paddingBox{
+    padding:20px;
+}
+
+.indexFbRegister .headingContainer{
+    text-align: left;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.indexFbRegister h1{
+    font-size:30px;
+
+}
+
+.indexFbRegister button{
+    display: block;
+    margin:20px auto;
+    background:#405e9c;
+}
+
+.indexFbRegister span{
+    font-size: 23px;
+    line-height: 1.3;
+}
+
+.workStepHeadingIcon1{
+    background: url("../images/New%20folder/search1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.workStepHeadingIcon2{
+    background: url("../images/New%20folder/credit%20card1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.workStepHeadingIcon3{
+    background: url("../images/New%20folder/lesson1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.workStepHeadingIcon4{
+    background: url("../images/New%20folder/done1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.contentBox .workStepDescription {
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.contentBox li.workSteps {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tutorRegistration{
+    width:100%;
+    height:500px;
+}
+
+.tutorRegistration .contentBox h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.tutorRegistration .contentBox .content{
+    margin: 0 150px;
+    position: absolute;
+    top: calc(50% - 60px);
+}
+
+.tutorRegistration button{
+    width: 190px;
+    background:#ED1F23 ;
+    border-radius:3px;
+}
+
+.newFont{
+    font-family: 'Homenaje', sans-serif;
+}
+
+.newColor{
+    color: #ED1F23;
+}
+
+.newColor2{
+    color:#484848;
+}
+
+.newColor3{
+    color:#fff;
+}
+
+.newColor1{
+    color:#000;
+}
+
+
+
+
+footer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    margin: 0;
+    font-size: 18px;
+    height: 150px;
+    font-size: 16px;
+    font-color:#909CC2;
+    background:#231F20;
+    text-align: center;
+    border-left:1px solid #ccc;
+}
+
+footer .footerBox{
+    display: inline-block;
+    margin-top: 63px;
+    width: 80%;
+}
+
+footer .container{
+    margin: 70px 200px;
+}
+
+footer p{
+    float:left;
+}
+
+footer ul{
+    float: right;
+}
+
+footer ul li{
+    font-weight:bold;
+    display: inline-block;
+    margin-left:20px;
+}
+
+footer, section:after {
+    height: 142px;
+    background:#231F20;
+}
+
+
+.modal{
+    display: none;
+}
+
+.custombox-container{
+    height:100%;
+    min-height:100%;
+}
+
+.editAccountDetailsContainer{
+    display: inline-block;
+    padding:20px;
+    background: #ffffff;
+    text-align:left;
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+}
+
+.editAccountDetailsContainer .headingBar{
+    border-bottom: 2px solid #AF7AC5;
+    color:#AF7AC5;
+}
+
+.editAccountDetailsContainer span{
+    display: inline-block;
+    width: 130px;
+    color: #4D515F;
+}
+
+.editAccountDetailsContainer input{
+    margin-bottom:20px;
+    border-radius: 0px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid grey;
+}
+
+.editAccountDetailsContainer input:focus {
+    outline: none;
+}
+
+
+.editAccountDetailsContainer button{
+    width:160px;
+    height:40px;
+    line-height: 40px;
+    background: #AF7AC5;
+}
+
+.editAccountDetailsContainer .buttonContainer{
+    border:2px solid #AF7AC5;
+    float:right;
+}
+
+.buttonContainer{
+    display: inline-block;
+    padding:2px;
+    border:2px solid #2F9AD5;
+}
+
+
+.errorContainer{
+    box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    display: inline-block;
+    background: #fff;
+    padding:20px;
+    font-size:24px;
+    line-height: 1.4;
+    max-width:600px;
+}

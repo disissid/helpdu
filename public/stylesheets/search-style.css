@@ -105,17 +105,17 @@
 
 .searchResults .tutorCollege{
     color:#868485;
+    margin: 5px;
 }
 
 .searchResults .tutorDescription{
-    height:70px;
     overflow: hidden;
     font-weight: 400;
     font-family: 'Open Sans', sans-serif;
     line-height: 1.3;
-    font-size: 14px;
-    margin:10px;
-    color:#333333;
+    font-size: 15px;
+    margin: 5px;
+    color: #868485;
 }
 
 .searchResults .contactTutor{

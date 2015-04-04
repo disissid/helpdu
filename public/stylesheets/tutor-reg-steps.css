@@ -1,3 +1,27 @@
+header{
+    background: #fff;
+    top:0px;
+    height:60px;
+    line-height: 60px;
+}
+
+header .nameHeading{
+    font-size:50px;
+}
+
+section:after {
+    height: 142px;
+    background:#E6E6E6;
+}
+
+
+.headingBar h1{
+    font-size: 32px;
+}
+
+
+
+
 .registrationStepsContainer {
     background: #ffffff;
     display: inline-block;
@@ -28,12 +52,12 @@
 
 .registrationTimeline span:nth-child(7n+1){
 
-     border:2px solid #EC7063;
-     color: #EC7063;
+     border:2px solid #ED1F23;;
+     color: #ED1F23;;
  }
 
 .registrationTimeline .connectingLine:nth-child(7n+2){
-    background: #EC7063;
+    background: #ED1F23;;
 }
 
 .registrationTimeline span:nth-child(7n+3){
@@ -81,9 +105,54 @@ display: inline-block;
 .tutorRegistrationSteps input{
     margin-bottom:20px;
     margin-left:50px;
-    border:none;
-    border-bottom: 2px solid #CCCCCC;
     width:320px;
+    border-radius: 3px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+}
+
+
+.tutorRegistrationSteps .radioButtons {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: 50px;
+    width: 320px;
+    /* text-align: center; */
+}
+
+
+.tutorRegistrationSteps input[type="radio"]{
+    margin: 0;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    outline: none;
+}
+
+.tutorRegistrationSteps input[type="radio"]:before {
+    content:'';
+    display:block;
+    width:100%;
+    height:100%;
+    margin: 0 auto;
+    border-radius:50%;
+}
+
+.tutorRegistrationSteps input[type="radio"]:checked:before{
+    background:#ED1F23;
+}
+
+
+.tutorRegistrationSteps label{
+    margin-right:40px;
+}
+
+.tutorRegistrationSteps button{
+    background:#ED1F23;
 }
 
 .tutorRegistrationSteps input[type="checkbox"]{
@@ -113,10 +182,13 @@ float: right;
     width: 170px;
     height: 40px;
     line-height: 40px;
+    float:right;
+    margin:20px;
 }
 
 .tutorRegistrationStep1 .paddingBox span{
     width: 170px;
+    font-size: 18px;
     display: inline-block;
 }
 
@@ -126,16 +198,8 @@ float: right;
 }
 
 .tutorRegistrationStep1 .headingBar{
-    border-bottom: 2px solid #EC7063;
-    color:#EC7063;
-}
-
-.tutorRegistrationStep1 .buttonContainer{
-    border:2px solid #EC7063;
-}
-
-.tutorRegistrationStep1 button{
-    background: #EC7063;
+    border-bottom: 2px solid #ED1F23;;
+    color:#ED1F23;;
 }
 
 .tutorRegistrationStep2 .headingBar{

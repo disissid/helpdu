@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="../javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="../javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="../javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="../javascripts/services/services.js"></script>
+    <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
+    <script type="text/javascript" src="../javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="../stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/tutor-lesson-page.css"/>
+    <script type="text/javascript" src="../javascripts/lib/custombox.js"></script>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/custombox.css"/>
+</head>
+</head>
+<body ng-controller="MenuCtrl">
+<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+    <ul ng-controller="NavCtrl">
+        <li class="helpduNameHeading">HelpDU</li>
+        <li ng-show="!anyoneLoggedIn" class="navigationList">
+            <ul>
+                <li class="icon" id="profile" ng-class="{active: isActive('/profile.html')}"> <a href="#/profile.html">Profile</a></li>
+                <li class="icon" id="messages" >Messages</li>
+                <li class="icon" id="lessons" >Lessons</li>
+            </ul>
+        </li>
+        <li class="tutorChatList" ng-show="studentLoggedIn">
+            <ul>
+                <li ng-repeat="tutor in tutors">{{tutor.name}}</li>
+            </ul>
+        </li>
+    </ul>
+</aside>
+
+
+<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+    <header>
+        <div class="options" ng-click="toggleMenu();" stop-event>
+            <div class="optionBar optionBar1"></div>
+            <div class="optionBar optionBar2"></div>
+            <div class="optionBar optionBar3"></div>
+
+        </div>
+
+
+
+
+        <input id="search" type="text" placeholder="Search for tutors by subject"/>
+        <div id="header-right-container">
+            <div id="login" ng-click="toggleLogin();" stop-event >
+                Log In
+                <login ng-show="loginOpened" stop-event></login>
+            </div>
+            <span>|</span>
+            <a href="register.html"><div>Sign Up</div></a>
+        </div>
+    </header>
+
+
+
+    <section>
+        <div class="lessonContainer" ng-controller="TutorLessonPageCtrl">
+            <div class="lessonHeader">
+                <div class="subject"><h1>{{lessonPage.subject}}</h1><span class="mode" ng-show="!lessonPage.privatePublickey">Public</span><span class="mode" ng-show="lessonPage.privatePublickey">Private</span>
+                    <span class="status" ng-show="!lessonpage.completed">On Going</span><span class="status" ng-show="lessonpage.completed">Completed</span>
+                </div>
+                <div class="lessonInfo"><div class="createdOn"><span>Created On</span><span class="createdOnDate">{{lessonPage.createdTimestamp | date:"MM/dd/yyyy"}}</span></div><div class="deadline"><span>Deadline</span><span class="deadlineDate">{{lessonPage.deadlineHours}}</span></div><div class="noOfHours"><span>No. of Hours</span><span class="hours">{{lessonPage.numberOfHours}} hours</span></div>
+                    <div class="tutorAssigned">Assigned Tutor<span class="tutorName">{{lessonPage.tutor}}</span></div>
+                    <div class="buttonContainer getLessonButton"><button type="submit">Get Lesson</button></div>
+                </div>
+
+            </div>
+            <div class="lessonDescription"><h2>Lesson Description</h2><p>{{lessonPage.message}}</p></div>
+            <div class="divisonBorder"></div>
+            <div class="buttonContainer"> <button id="element" type="submit">Submit Lesson</button></div>
+
+            <div ng-controller="SubmitLessonCtrl" id="requestLessonFormWrapper" class="formWrapper modal">
+                <div class="headingBar"><div class="headingBarIcon"></div><h1>Submit Lesson</h1>
+                </div>
+                <form name="submitLessonForm"  ng-submit="submitData()" novalidate>
+                    <h2>{{lessonPage.subject}}</h2><br/>
+                    <textarea ng-model="submitLesson.message" required></textarea><br/>
+                    <div id="upload" ng-controller="FileCtrl"><span>Attach File(s)</span>
+                        <input type="file" ng-file-select="onFileSelect($files)" multiple>
+                    </div>
+                    <div class="buttonContainer"><button type="submit" ng-disabled="submitLessonForm.$invalid">Submit Lesson</button></div><br/>
+                </form>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <footer>
+        <div class="footerBox">
+            <p>©2015 HelpDU. All rights reserved.</p>
+            <ul>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                    <a href="">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('element').addEventListener('click', function ( e ) {
+            Custombox.open({
+                target: '.modal',
+                effect: 'fadein',
+                width:'846'
+            });
+            e.preventDefault();
+        });
+    });
+</script>
+
+</body>
+</html>

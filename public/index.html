@@ -14,17 +14,30 @@
     <script type="text/javascript" src="javascripts/directives/focus-directive.js"></script>
     <script type="text/javascript" src="javascripts/index-app.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
     <link href="stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
     <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/new-style.css"/>
+    <script type="text/javascript" src="javascripts/lib/custombox.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/custombox.css"/>
 </head>
-<body ng-controller="MenuCtrl">
+<body ng-controller="MenuCtrl" scroll ng-class="{min:boolChangeClass}">
 <div material-preloader position="top" height="5px" col1='#8e44ad' col2='#c0392b' col3='#2980b9' col4='#16a085' style="position: relative;z-index: 9999;"></div>
 
+<header>
+    <div class="nameHeading"><span ng-class="boolChangeClass ? 'newColor1' : 'newColor3'">Help</span><span class="newColor">DU</span></div>
+    <ul ng-class="boolChangeClass ? 'newColor1' : 'newColor3'">
+        <li>About</li>
+        <li>Features</li>
+        <li>How it works</li>
+        <li>Why HelpDU</li>
+        <li>Apply as a Tutor</li>
+        <li>Contact</li>
+    </ul>
+</header>
 
 
-
-<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
+<!--<aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
     <ul ng-controller="NavCtrl">
         <li class="helpduNameHeading">HelpDU</li>
         <li ng-show="anyoneLoggedIn" class="navigationList">
@@ -40,10 +53,31 @@
             </ul>
         </li>
     </ul>
-</aside>
+</aside>-->
+
+<div class="searchBarWrapper">
+    <div class="opacityCover"></div>
+    <div class="infoBoxContainer">
+        <div class="infoBox">
+            <h1>Improve your grades.</h1>
+
+            <p>Our online tutors are ready to help you 24/7</p>
+
+        </div>
+        <div ng-show="!anyoneLoggedIn" class="homePageLogin"><!--<div class="loginBackgroundBlur"></div>-->
+            <login></login></div>
+    </div>
+
+    <div class="searchBar">
+        <input type="text" placeholder="Search for tutors by subject" class="search"/>
+        <input type="submit" name="search" value="Search" class="searchBtn"/>
+    </div>
+</div>
+
+<div class="searchBarCover"></div>
 
 
-<div class="indexPage" id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+<!--<div class="indexPage" id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
 <!--<header>
     <div class="options" ng-click="toggleMenu();" stop-event>
         <div class="optionBar optionBar1"></div>
@@ -86,24 +120,7 @@
         <div class="profileControl controls"></div>
     </div>
 
-    <div class="searchBarWrapper">
-        <!--<div class="opacityCover"></div>-->
-        <div class="infoBoxContainer">
-        <div class="infoBox">
-            <h1>Improve your grades.</h1>
 
-            <p>Connect with a top tutor online.</p>
-
-        </div>
-        <div ng-show="!anyoneLoggedIn" class="homePageLogin"><!--<div class="loginBackgroundBlur"></div>-->
-            <login></login></div>
-        </div>
-
-        <div class="searchBar">
-            <input type="text" placeholder="Search for tutors by subject" class="search"/>
-            <input type="submit" name="search" value="Search" class="searchBtn"/>
-        </div>
-    </div>
 
 
 
@@ -134,12 +151,14 @@
 
     <div class="howItWorks">
         <h2>Imagine how much easier homework would be<br>if you could...</h2>
-        <div class="searchTutor steps"><div class="stepImage"></div><div class="stepDescription"><span>Connect instantly anytime, anywhere.</span></div></div>
-        <div class="requestLesson steps"><div class="stepImage"></div><div class="stepDescription"><span>Get your own private tutor.</span></div></div>
-        <div class="homeworkHelp steps"><div class="stepImage"></div><div class="stepDescription"><span>Discuss your homework with tutor</span></div></div>
+        <div class="searchTutor steps"><div class="stepHeading"><span>24/7 Access</span></div><div class="stepImage"></div><div class="stepDescription"><span>Connect instantly anytime, anywhere.</span></div></div>
+        <div class="requestLesson steps"><div class="stepHeading"><span>The Best Tutors</span></div><div class="stepImage"></div><div class="stepDescription"><span>Choose from thousands of approved online tutors.</span></div></div>
+        <div class="homeworkHelp steps"><div class="stepHeading"><span>Personalized</span></div><div class="stepImage"></div><div class="stepDescription"><span>Every session is one-to-one and personalized.</span></div></div>
     </div>
 
-    <div class="studentReviews">
+    <div class="imageBreak imageBreak1"><div class="opacityCover"></div></div>
+
+    <!--<div class="studentReviews">
         <h2>What our students say about their tutors</h2>
         <div class="review review1">
 
@@ -171,10 +190,50 @@
                 <div class="quote"><p> "Extremely helpful in helping me revise and make corrections to my essay! Highly recommended."</p></div>
             </div>
         </div>
+        </div>-->
+
+    <div class="howItWorks2">
+      <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>HOW</span></div><span class="endHeading newColor2">IT WORKS?</span><div class="lowerBroadBorder"></div></div></div>
+        <div class="contentBox">
+            <ul>
+            <li class="newColor2 workSteps"><div class="workStepHeadingIcon workStepHeadingIcon1"></div><div class="workStepHeading newFont">Search Tutor</div><div class="workStepDescription"><span>All of our tutors are verified. You can search, read tutor profiles and check previous reviews.</span></div></li>
+            <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon2"></div><div class="workStepHeading newFont">Pre-pay</div><div class="workStepDescription"><span>With HelpDU, you buy hours of learning time on a Pay As You Go basis. Simply, top up the minutes in your account before your lesson.</span></div></li>
+            <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon3"></div><div class="workStepHeading newFont">Request Lesson</div><div class="workStepDescription"><span>You can discuss lesson before requesting to a tutor Free of cost over chat.Send public or private lessons.</span></div></li>
+            <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon4"></div><div class="workStepHeading newFont">Done</div><div class="workStepDescription"><span>You'll be notified as soon as your lesson is completed, you can clear your doubts with the tutor if any.You can review lesson.</span></div></li>
+
+        </ul>
         </div>
+    </div>
+
+    <div class="imageBreak imageBreak2"><div class="opacityCover"></div></div>
+
+
+    <div class="howItWorks2 whyHelpdu">
+        <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>WHY</span></div><span class="endHeading newColor2">HELPDU?</span><div class="lowerBroadBorder"></div></div></div>
+        <div class="contentBox">
+            <ul class="newColor2">
+                <li class=" workSteps"><div class="workStepHeading newFont"><div class="stat newColor">347</div> Tutors</div><div class="workStepDescription"><span>registered in alpha phase.</span></div></li>
+                <li class="workSteps"><div class="workStepHeading newFont"><div class="stat newColor">94.6%</div> Students</div><div class="workStepDescription"><span>have shown interest in our product when asked in a survey.</span></div></li>
+                <li class="workSteps"><div class="workStepHeading newFont"><div class="stat newColor">30%</div> Cheaper</div><div class="workStepDescription"><span>Our rates are around 30% less than other online tutoring websites.</span></div></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="imageBreak imageBreak3"><div class="opacityCover"></div></div>
+    <div class="howItWorks2 tutorRegistration">
+        <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>BECOME</span></div><span class="endHeading newColor2">A TUTOR!</span><div class="lowerBroadBorder"></div></div></div>
+
+        <div class="contentBox"><div class="content">
+    <h2 class="newColor2">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.</h2>
+        <button class="ApplyTutor" id="element">Apply Now</button>
+            <div class="modal indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Become A Tutor</h1></div><div class="paddingBox"><span class="newFont">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.Work from home and earn extra money by becoming an online tutor with HelpDU.com!</span><a href="/auth/tutorRegister/facebook"><button class="fb" type="button">Sign up via Facebook </button></a></div></div>
+        </div></div>
+        </div>
+
 </section>
 
-<footer>
+<footer class="newColor3">
     <div class="container">
     <p>©2015 HelpDU. All rights reserved.</p>
     <ul>
@@ -194,6 +253,19 @@
         </div>
 </footer>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('element').addEventListener('click', function ( e ) {
+            Custombox.open({
+                target: '.modal',
+                effect: 'fadein',
+                width:'646'
+            });
+            e.preventDefault();
+        });
+    });
+</script> 
 
 </body>
 </html>

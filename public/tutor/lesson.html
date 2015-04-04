@@ -10,6 +10,7 @@
     <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
     <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
     <script type="text/javascript" src="../javascripts/services/services.js"></script>
+    <script type="text/javascript" src="../javascripts/filters/filters.js"></script>
     <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
     <script type="text/javascript" src="../javascripts/index-app.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -73,7 +74,7 @@
         </div>
     </header>
     <section>
-        <div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper modal">
+        <!--<div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper modal">
             <div class="headingBar"><div class="headingBarIcon"></div><h1>Submit Lesson</h1>
             </div>
             <form name="reqLessonForm"  ng-submit="submitData()" novalidate>
@@ -84,7 +85,7 @@
                 </div>
                 <div class="buttonContainer"><button type="submit" ng-disabled="reqLessonForm.$invalid">Submit Lesson</button></div><br/>
             </form>
-        </div>
+        </div>-->
 
         <div class="privateLessons lessonsTable" ng-controller="TutorPublicLessonCtrl">
             <div class="headingBar"><div class="headingBarIcon"></div><h1>Get Public Lessons</h1>

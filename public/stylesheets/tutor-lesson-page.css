@@ -139,7 +139,7 @@
 label[for="flag"]{
     position: absolute;
     right: 20px;
-    top: 50px;
+    top: 20px;
 }
 
 .reviewContainer input#like.clicked.selected ~ label .likeButton,.likeButton.alreadyReviewd{

@@ -65,7 +65,7 @@ font-size:24px;
     color:#AF7AC5;
 }
 
-.stats:nth-child(3n+3) span{
+.stats:nth-child(3n) span{
     color:#EC7063;
 }
 
@@ -78,6 +78,27 @@ font-size:24px;
     font-size: 40px;
     margin:10px;
 }
+
+.stats.message,.stats.requestPrivateLesson{
+    cursor: pointer;
+}
+
+.stats.message .statNumber{
+    width:40px;
+    height:40px;
+    background: url("../images/email3.png");
+    background-size: cover;
+    margin: 10px auto;
+}
+
+.stats.requestPrivateLesson .statNumber{
+    width:40px;
+    height:40px;
+    background: url("../images/lesson3.png");
+    background-size: cover;
+    margin: 10px auto;
+}
+
 
 .profileDetails{
     border:1px solid #CCCCCC;
@@ -96,7 +117,7 @@ font-size:24px;
     line-height: 50px;
     font-size: 18px;
     border-bottom:1px solid #CCCCCC;
-
+    cursor: pointer;
 }
 
 
@@ -108,6 +129,7 @@ font-size:24px;
     border-left:1px solid #CCCCCC;
     text-align: left;
     line-height: 1.5;
+    height:420px;
 }
 
 .displayDetails h2{
@@ -119,6 +141,17 @@ font-size:24px;
     margin-bottom: 50px;
 }
 
+.displayDetails .reviewTable{
+    width:100%;
+}
+
+.reviewTable th{
+    font-size:18px;
+}
+
+.reviewTable tr{
+    border-bottom: 1px solid #ccc;
+}
 
 .tutoredSubjects{
     text-align: left;
