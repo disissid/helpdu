@@ -60,7 +60,7 @@ passport.use('local-student-register',new LocalStrategy({
 passport.use('fb-login',new FacebookStrategy({
     clientID: '693880737394303',
     clientSecret: 'ad8cef15cbe512dd08675a70fbf0a9ab',
-    callbackURL: "http://192.168.1.100:666/auth/login/facebook/callback"
+    callbackURL: "http://104.131.103.240:4000/auth/login/facebook/callback"
   },
 	function(accessToken, refreshToken, profile, done) {
 		var md5=crypto.createHash('md5');	//Generates MD5 hash of the unique email
@@ -83,7 +83,7 @@ passport.use('fb-login',new FacebookStrategy({
 passport.use('fb-student-register',new FacebookStrategy({
     clientID: '693880737394303',
     clientSecret: 'ad8cef15cbe512dd08675a70fbf0a9ab',
-    callbackURL: "http://192.168.1.100:666/auth/studentRegister/facebook/callback"
+    callbackURL: "http://104.131.103.240:4000/auth/studentRegister/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
 	var md5=crypto.createHash('md5');	//Generates MD5 hash of the unique email
@@ -122,7 +122,7 @@ passport.use('fb-student-register',new FacebookStrategy({
 passport.use('fb-tutor-register',new FacebookStrategy({
     clientID: '693880737394303',
     clientSecret: 'ad8cef15cbe512dd08675a70fbf0a9ab',
-    callbackURL: "http://192.168.1.100:666/auth/tutorRegister/facebook/callback"
+    callbackURL: "http://104.131.103.240:4000/auth/tutorRegister/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
   	var md5=crypto.createHash('md5');	//Generates MD5 hash of the unique email
