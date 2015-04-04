@@ -18,6 +18,7 @@ var lessonSchema=new mongoose.Schema({
 	tutorUID:String, //currently assigned tutor to the lesson
 	tutorRating:Boolean, //Final rating the tutor got for this lesson
 	tutorReview:String, //Final Review the tutor got for this lesson
+	isReviewed:Boolean, //Has he uploaded the review
 	flaggedLesson:{type:Boolean,default:false}, 
 	/*
 	If a lesson is flagged by the student for a non-satisfactory answer 

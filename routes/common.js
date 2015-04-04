@@ -27,7 +27,7 @@ router.get('/search',function(req,res){
 
 router.post('/search',function(req,res){
 	var subject = req.body.subject;
-	tutorDB.find({'subjects':subject}).where('accountType').equals('1').select('tutorUID name tutorRatingPositive tutorRatingNegative fbData').exec(function(err,tutor){
+	tutorDB.find({'subjects':subject}).where('accountType').equals('1').select('tutorUID name tutorRatingPositive tutorRatingNegative tutorData instituteName fbData').exec(function(err,tutor){
 		if(err){
 			res.json({'code':4,'message':'Some Unexpected Error occureds'});
 		}

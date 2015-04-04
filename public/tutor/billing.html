@@ -10,16 +10,18 @@
     <script type="text/javascript" src="../javascripts/lib/angular-Material-Preloader.min.js"></script>
     <script type="text/javascript" src="../javascripts/directives/directives.js"></script>
     <script type="text/javascript" src="../javascripts/services/services.js"></script>
-    <script type="text/javascript" src="../javascripts/filters/filters.js"></script>
     <script type="text/javascript" src="../javascripts/directives/focus-directive.js"></script>
     <script type="text/javascript" src="../javascripts/index-app.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href="../stylesheets/materialPreloader.min.css" rel="stylesheet prefetch">
     <link rel="stylesheet" type="text/css" href="../stylesheets/css-reset.css"/>
     <link rel="stylesheet" type="text/css" href="../stylesheets/style.css"/>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/subscription-pack-style.css"/>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/billing-style.css"/>
+
 </head>
-<body ng-controller="MenuCtrl">
+
+<body ng-controller="MenuCtrl" ng-init="getStudentProfileData()" ><!--ng-show="Authenticated"-->
+
 <aside   stop-event ng-class="{asideOpen:menuOpened,asideClose:!menueOpened,clicked:clicked,notClicked:!clicked}" >
     <ul ng-controller="NavCtrl">
         <li class="helpduNameHeading">HelpDU</li>
@@ -42,13 +44,12 @@
 </aside>
 
 
-<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+<div id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
     <header>
         <div class="options" ng-click="toggleMenu();" stop-event>
             <div class="optionBar optionBar1"></div>
             <div class="optionBar optionBar2"></div>
             <div class="optionBar optionBar3"></div>
-
         </div>
 
 
@@ -56,47 +57,68 @@
 
         <input id="search" type="text" placeholder="Search for tutors by subject"/>
         <div id="header-right-container">
-            <div class="headerLoginContainer"><div id="login" ng-click="toggleLogin();" stop-event >
-                Log In
-                <login ng-show="loginOpened" stop-event></login>
-            </div>
-                <span>|</span>
-                <a href="register.html"><div>Sign Up</div></a>
-            </div>
-            <div class="headerNavListContainer">
-                <ul class="headerNavList">
-                    <li class="navNotif"></li>
-                    <li class="navMessage"></li>
-                    <li class="navLogout"></li>
-                </ul>
+            <div class="rightControls">
+                <div class="notifControl controls" ng-click="toggleBox(1);" stop-event>
+                    <div class="notifControlBox" ng-show="boxId == 1 && boxOpened" stop-event>
+                        <div class="notifControlTri"></div>
+                    </div>
+                </div>
+                <div class="messageControl controls" ng-click="toggleBox(2);" stop-event>
+                    <div class="messageControlBox" ng-show="boxId == 2 && boxOpened" stop-event>
+                        <div class="messageControlTri"></div>
+                    </div>
+                </div>
+                <div class="profileControl controls"></div>
             </div>
         </div>
-
-
     </header>
-
-
-
     <section>
-        <div class="subscriptionContainer" ng-controller="BuyHourCtrl">
-            <div class="subscriptionPack subscriptionPack1">
-                <div class="hoursContainer"><span class="hour">1</span><span>Hour</span></div><span>for</span><span class="subscriptionPrice">30 $</span>
-                <div class="buttonContainer"><button class="subscribeButton" ng-click="submitData(1)">Get Pack</button></div>
+
+        <div ng-controller="StudentBillingCtrl" class="billingContainer">
+            <div class="walletBigContainer"><div class="walletContainer">
+                <div class="headingBar"><div class="headingBarIcon"></div><h1>HelpDU Wallet</h1>
+                </div>
+                <h2>Your wallet has</h2>
+                <div class="hoursContainer"><span class="hour">{{balance}}</span><span>Hours</span></div>
             </div>
-            <div class="subscriptionPack subscriptionPack2">
-                <div class="hoursContainer"><span class="hour">3</span><span>Hours</span></div><span>for</span><span class="subscriptionPrice">75 $</span>
-                <div class="buttonContainer"><button class="subscribeButton" ng-click="submitData(3)">Get Pack</button></div>
+                <div class="transactionHistory" id="hourTransactionHistory">
+                    <div class="headingBar"><div class="headingBarIcon"></div><h1>Hours Transaction History</h1>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Lesson</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr ng-repeat="bill in bills">
+                            <td>{{bill.createdTimestamp | date:"MM/dd/yyyy"}}</td>
+                            <td>{{bill.transactionType}}</td>
+                            <td><span ng-show="{{bill.transactionType == 'wallet'}}">-</span><span ng-show="!({{bill.transactionType == 'wallet'}})">View Lesson</span></td>
+                            <td><span ng-show="{{bill.creditAmount == 0}}">+{{bill.debitAmount}}</span><span ng-show="{{bill.debitAmount == 0}}">-{{bill.creditAmount}}</span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <div class="subscriptionPack subscriptionPack3">
-                <div class="hoursContainer"><span class="hour">5</span><span>Hours</span></div><span>for</span><span class="subscriptionPrice">100 $</span>
-                <div class="buttonContainer"><button class="subscribeButton" ng-click="submitData(5)">Get Pack</button></div>
+
+            <div></div>
+
+            <div class="transactionHistory" id="financeTransactionHistory">
+                <div class="headingBar"><div class="headingBarIcon"></div><h1>Finance Transaction History</h1>
+                </div>
+                <table>
+                    <tr>
+                        <th>Date</th>
+                        <th>Hours Bought</th>
+                        <th>Amount</th>
+                    </tr>
+                </table>
             </div>
+
 
         </div>
-
 
     </section>
-
     <footer>
         <div class="container">
             <p>©2015 HelpDU. All rights reserved.</p>
@@ -117,6 +139,5 @@
         </div>
     </footer>
 </div>
-
 </body>
 </html>

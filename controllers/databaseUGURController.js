@@ -81,6 +81,7 @@ exports.uploadCompletedLesson=function(lessonUID,subject,callback){
 				else if(returnedLesson){
 					returnedLesson.completedTimestamp=moment();
 					var tempCompletedLesson = new completedLessonModel(returnedLesson);
+					tempCompletedLesson.isReviewed = false;
 					tempCompletedLesson.save(function(err,returnedCompletedLesson){
 						if(err){
 							callback({'code':'4','message':err,'function':'UGURController/uploadCompletedLesson'});
@@ -105,12 +106,15 @@ exports.updateCompletedLesson=function(lessonUID,tutorRating,tutorReview,flagged
 			callback({'code':'4','message':'Lesson not found','function':'UGURController/updateCompletedLesson'});
 		}
 		else if(returnedCompletedLesson){
-			if (tutorRating!=='null')
+			if (tutorRating!=='null'){
 				returnedCompletedLesson.tutorRating=tutorRating;
+				returnedCompletedLesson.isReviewed=true;
+			}
 			if (tutorReview!=='false')
 				returnedCompletedLesson.tutorReview=tutorReview;
 			if (flaggedLesson!=='null')
 				returnedCompletedLesson.flaggedLesson=flaggedLesson;
+
 			returnedCompletedLesson.save(function(err,lesson){
 				if(err){
 					callback({'code':'4','message':err,'function':'UGURController/updateCompletedLesson'});

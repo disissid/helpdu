@@ -134,31 +134,7 @@ header #header-right-container #login{
     display: none;
 }
 
-.headerNavList{
-    margin-top: 8px;
-}
 
-.headerNavList li{
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    margin:0 5px;
-}
-
-.navNotif{
-    background: url("../images/bell6.png");
-    background-size: cover;
-}
-
-.navMessage{
-    background: url("../images/22169.png");
-    background-size: cover;
-}
-
-.navLogout{
-    background: url("../images/shutdown1.png");
-    background-size: cover;
-}
 
 /*header{
     position: fixed;

@@ -401,7 +401,7 @@ router.get('/uploadLessonTop/:studentUID/:tutorUID/:subject/:message/:fileLinks/
 });
 
 //assignPublicLessonTop=function(lessonUID,tutorUID,subject,callback){
-//Sample : http://localhost:666/assignPublicLessonTop/lessonUID/hemant/physics //55198ae8122fee02dfa7b746
+//Sample : http://localhost:666/assignPublicLessonTop/lessonUID/hemant/physics //e66aa4de3237fa7626ab49f61ce4c6dd
 router.get('/assignPublicLessonTop/:lessonUID/:tutorUID/:subject',function(req,res){
 	databaseTopController.assignPublicLessonTop(req.params.lessonUID,req.params.tutorUID,req.params.subject,function(result){
 		res.json(result);
@@ -419,12 +419,14 @@ router.get('/cashOutTutor/:tutorUID',function(req,res){
 //Student controller route testing
 
 //Change Tutor change account type
-//Sample : http://localhost:666/changeTutor/tutorUID/hemant/1
-router.get('/changeTutor/:tutorUID/:name/:accountType',function(req,res){
+//Sample : http://localhost:666/changeTutor/tutorUID
+router.get('/changeTutor/:tutorUID',function(req,res){
 	tutorController.updateTutorDetails(req.params.tutorUID,
 		{
-			'name':req.params.name,
-			'accountType':req.params.accountType
+			'accountType':1,
+			'tutorVerified':true,
+			'tutorApproved':true
+
 		},function(result){
 			res.json(result);
 		});

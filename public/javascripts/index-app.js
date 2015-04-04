@@ -1,7 +1,9 @@
 //file uploading need to be done via amazon s3
 
 
-var indexApp = angular.module('indexApp',['directives','angularFileUpload','services','angularMaterialPreloader']);
+var indexApp = angular.module('indexApp',['directives','angularFileUpload','services','angularMaterialPreloader','customFilter'],function($locationProvider){
+    $locationProvider.html5Mode(true);
+});
 
 
 indexApp.controller('NavCtrl', function($scope,loggedIn) {
@@ -86,6 +88,29 @@ indexApp.controller('studentLessonCtrl',function($scope,$http){
 
         });
 });
+
+indexApp.controller('TutorPublicLessonCtrl',function($scope,$http){
+    $http.get("/tutorData/lessonData")
+        .success(function (data, status, headers, config)
+        {  console.log(data);
+            $scope.lessons=data.message;
+        })
+        .error(function (data, status, headers, config) {
+
+        });
+});
+
+indexApp.controller('TutorLessonCtrl',function($scope,$http){
+    $http.get("/tutorData/publicLessons")
+        .success(function (data, status, headers, config)
+        {  console.log(data);
+            $scope.publicLessons=data.message;
+        })
+        .error(function (data, status, headers, config) {
+
+        });
+});
+
 
 
 
@@ -212,28 +237,29 @@ indexApp.controller('MessageCtrl',function($scope){
 
 
 indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
+    $scope.newTutor={};
     $http.get("/newTutorData/detailData")
         .success(function (data, status, headers, config) {
             console.log(data);
-            $scope.newTutor.name=data.name;
+           $scope.newTutor.name=data.name;
             $scope.newTutor.email=data.email;
             $scope.newTutor.major=data.tutorData.major;
             $scope.newTutor.yearOfGrad=data.tutorData.yearOfGrad;
             $scope.newTutor.teachingExp=data.tutorData.teachingExp;
             $scope.newTutor.extracurrInterests=data.tutorData.extracurrInterests
             $scope.step=data.tutorData.step;
-           $scope.newTutor.instiEmail=data.instituteEmail
-            $scope.newTutor.instiName=data.instituteName
+           $scope.newTutor.instiEmail=data.instituteEmail;
+            $scope.newTutor.instiName=data.instituteName;
             $scope.selection=data.subjects;
         })
         .error(function (data, status, headers, config) {
 
         });
 
-    $scope.newTutor={};
 
-    $scope.step=1;
+
     $scope.value=1;
+    $scope.step=1;
 
 
 
@@ -256,8 +282,8 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
 
     $scope.selection=[];
     // toggle selection for a given employee by name
-    $scope.toggleSelection = function toggleSelection(subjectName) {
-        var idx = $scope.selection.indexOf(subjectName);
+    $scope.toggleSelection = function toggleSelection(studentName) {
+        var idx = $scope.selection.indexOf(studentName);
 
         // is currently selected
         if (idx > -1) {
@@ -266,10 +292,9 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
 
         // is newly selected
         else {
-            $scope.selection.push(subjectName);
+            $scope.selection.push(studentName);
         }
     };
-
 
     $scope.submitData=function(){
 
@@ -279,7 +304,7 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
                 'yearOfGrad':$scope.newTutor.yearOfGrad,
                 'teachingExp':$scope.newTutor.teachingExp,
                 'extracurrInterests':$scope.newTutor.extracurrInterests,
-                'stage':$scope.step
+                'step':$scope.step
             },
             'name':$scope.newTutor.name,
             'email':$scope.newTutor.email,
@@ -309,6 +334,8 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
 
 
 });
+
+indexApp.controller('TutorProfileCtrl',function(){});
 
 indexApp.controller("RegisterController",function($scope,$http,$window,$interval){
     $scope.registered=false;
@@ -406,6 +433,162 @@ indexApp.controller('SearchCtrl',function($scope,$http){
     };
 })
 
+indexApp.controller('StudentLessonPageCtrl',function($scope,$http,$location){
+    var lessonUID = $location.path().split("/")[3];
+    console.log(lessonUID);
+    var data={
+        'lessonUID':lessonUID
+    }
+    $http.post("/studentData/lessonPageData",data)
+        .success(function (data, status, headers, config)
+        {  console.log(data);
+            $scope.lessonPage=data.message;
+
+
+            if($scope.lessonPage.tutorUID != 'false'){
+                var data={
+                    'tutorUID':$scope.lessonPage.tutorUID
+                }
+                console.log(data);
+
+                $http.post("/studentData/getTutorDetails", data)
+                    .success(function (data, status, headers, config) {
+                        console.log(data.message.name);
+                        $scope.lessonPage.tutorName=data.message.name;
+                    })
+                    .error(function (data, status, headers, config) {
+
+                    });
+
+                var data1={
+                    'studentUID':$scope.lessonPage.studentUID,
+                    'lessonUID':$scope.lessonPage.lessonUID
+                }
+
+                $http.post("/studentData/checkReviewStatus",data1)
+                    .success(function (data, status, headers, config)
+                    {
+                        $scope.review=data.message;
+                        console.log(data);
+                    })
+                    .error(function (data, status, headers, config) {
+
+                    });
+            }
+        })
+        .error(function (data, status, headers, config) {
+
+        });
+
+
+
+
+
+    $scope.submitData=function(){
+
+        var data={
+            'subject':$scope.lessonPage.subject,
+            'lessonUID':$scope.lessonPage.lessonUID,
+            'tutorUID':$scope.lessonPage.tutorUID,
+            'tutorRating':$scope.review.vote,
+            'tutorReview':$scope.review.message || ' '
+                                                                               /*'flaggedLesson':$scope.review.flag || false*/
+        }
+
+        console.log(data);
+
+        $http.post("/studentData/postReview", data)
+            .success(function (data, status, headers, config) {
+                console.log(data);
+
+
+                var data1={
+                    'studentUID':$scope.lessonPage.studentUID,
+                    'lessonUID':$scope.lessonPage.lessonUID
+                }
+
+
+                $http.post("/studentData/checkReviewStatus",data1)
+                    .success(function (data, status, headers, config)
+                    {
+                        $scope.review=data.message;
+                        console.log(data);
+                    })
+                    .error(function (data, status, headers, config) {
+
+                    });
+            })
+            .error(function (data, status, headers, config) {
+
+            });
+
+    };
+
+    $scope.flagLesson=function(){
+        var data={
+            'tutorUID':$scope.lessonPage.tutorUID,
+            'lessonUID':$scope.lessonPage.lessonUID
+        }
+
+        $http.post("/studentData/flagLesson",data)
+            .success(function (data, status, headers, config)
+            {
+                console.log(data);
+            })
+            .error(function (data, status, headers, config) {
+
+            });
+    }
+});
+
+
+indexApp.controller('TutorLessonPageCtrl',function($scope,$http){
+
+    $http.get("")
+        .success(function (data, status, headers, config)
+        {  console.log(data);
+            $scope.lessonPage=data.message;
+        })
+        .error(function (data, status, headers, config) {
+
+        });
+
+    $scope.submitData=function(){
+
+        var data={
+            'vote':$scope.review.vote,
+            'message':$scope.review.message || '',
+            'flaggedLesson':$scope.review.flag || false
+        }
+
+        console.log(data);
+    };
+});
+
+indexApp.controller("SubmitLessonCtrl",function($scope,$http){
+
+    $scope.uploadedFile={
+        url:""
+    };
+
+    $scope.submitData=function(){
+        var data={
+            'message':$scope.submitLesson.message,
+            'solutioninks':$scope.uploadedFile.url             //loader/progress bar need to be added for file uploading(request lesson button should be disabled
+        };
+        console.log(data);
+        $http.post("/studentData/uploadLesson/",data)
+            .success(function (data, status, headers, config)
+            {
+                console.log("lesson uploaded");
+                console.log(data);
+            })
+            .error(function (data, status, headers, config) {
+
+            });
+    };
+
+});
 
 /*indexApp.config(function(FacebookProvider) {
  // Set your appId through the setAppId method or

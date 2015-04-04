@@ -54,6 +54,8 @@ Errors List:
     8:Crtical Error
     9:Payment Gateway Failure
     11: Sufficient Balance not available
+    12: Lesson not found
+    13: Tutor not found
 
 
     Account Types:

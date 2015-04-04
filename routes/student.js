@@ -25,7 +25,11 @@ router.get('/billing',function(req,res){
 
 router.get('/search',function(req,res){
 	res.sendFile(path.normalize(__dirname+'/../public/student/search.html'));
-});	
+});
+
+router.get('/lesson-page/:lessonUID',function(req,res){
+	res.sendFile(path.normalize(__dirname+'/../public/student/lesson-page.html'));
+});
 
 
 
