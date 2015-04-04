@@ -64,6 +64,6 @@ router.get('*',function(req,res){
 });
 */
 
-mongoose.connect('mongodb://localhost:2001/helpdu'); //change this statement in the production version
+mongoose.connect('mongodb://127.0.0.1:27017/helpdu'); //change this statement in the production version
 
 module.exports = router;
