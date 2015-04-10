@@ -518,7 +518,7 @@ aside li.active{
 section {
     background: inherit;
     min-height: 100%;
-    margin-bottom: -142px;
+    margin-bottom: -242px;
     /* padding-top: 100px; */
     position: relative;
     text-align: center;
@@ -535,6 +535,7 @@ section {
 section:after {
     content: "";
     display: block;
+    height:172px;
 }
 
 .searchBarCover {
@@ -621,6 +622,26 @@ color: #ffffff;
 .searchBarWrapper .infoBox p{
     line-height: 1.4;
     font-size:20px;
+}
+
+.infoBox .buttonBox{
+    margin: 20px 60px;
+}
+
+.infoBox .loginButton{
+    background: none;
+    border: 2px solid #fff;
+    width: 200px;
+    float: left;
+    line-height: 40px;
+}
+
+.infoBox .tutorButton{
+    background: #ED1F23;
+    width: 200px;
+    float: right;
+    border: 2px solid #ED1F23;
+    line-height: 40px;
 }
 
 .searchBarWrapper .searchBar input{
@@ -1267,8 +1288,7 @@ color: #ffffff;
 
 .howItWorks2 .headingBox,.howItWorks2 .contentBox{
     display: inline-block;
-    width: 49.973%;
-    float: left;
+    width: 49%;
     height: 400px;
     position: relative;
     top: 50px;
@@ -1439,7 +1459,6 @@ footer {
     width: 100%;
     margin: 0;
     font-size: 18px;
-    height: 150px;
     font-size: 16px;
     color:#fff;
     background:#231F20;
@@ -1471,8 +1490,8 @@ footer ul li{
     margin-left:20px;
 }
 
-footer, section:after {
-    height: 142px;
+footer{
+    height: 172px;
     background:#231F20;
 }
 

@@ -4,24 +4,30 @@
     <meta charset="UTF-8">
     <title>HelpDU</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/new-style.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/footer-links-style.css"/>
 </head>
 <body>
 
 <div  id="mainContentWrapper">
-    <header class="flinkHeader">
-        <a href="/"><span class="flinkNameHeading"><span class="color1">Help</span><span class="color2">D</span><span class="color3">U</span></span></a>
+    <header>
+        <a href="/"><div class="nameHeading"><span ng-class="newColor1">Help</span><span class="newColor">DU</span></div></a>
+        <ul class="newColor1">
+            <a href="/about"><li>About</li></a>
+            <a href="/contact"><li>Contact</li></a>
+        </ul>
     </header>
 
 
 
     <section>
         <div class="contactContainer">
-            <h1>We're here to help!</h1>
+            <h1 class="newColor newFont">We're here to help!</h1>
             <hr/>
-            <h2>Get in touch with us:</h2>
+            <h2 class="newFont">Get in touch with us:</h2>
             <p>HelpDU Inc. is located at 273 Parnashree Pally Kolkata -700060.</p>
         </div>
 
@@ -31,10 +37,10 @@
             <p>©2015 HelpDU. All rights reserved.</p>
             <ul>
                 <li>
-                    <a href="/about.html">About</a>
+                    <a href="/about">About</a>
                 </li>
                 <li>
-                    <a href="/contact.html">Contact</a>
+                    <a href="/contact">Contact</a>
                 </li>
                 <li>
                     <a href="">Terms &amp; Conditions</a>

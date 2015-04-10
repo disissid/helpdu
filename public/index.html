@@ -27,12 +27,12 @@
 <header>
     <div class="nameHeading"><span ng-class="boolChangeClass ? 'newColor1' : 'newColor3'">Help</span><span class="newColor">DU</span></div>
     <ul ng-class="boolChangeClass ? 'newColor1' : 'newColor3'">
-        <li>About</li>
+        <a href="/about"><li>About</li></a>
         <a  ng-click="gotoElement('features')"><li>Features</li></a>
         <a  ng-click="gotoElement('howItWorks')"><li>How it works</li></a>
         <a  ng-click="gotoElement('whyHelpdu')"><li>Why HelpDU</li></a>
         <a  ng-click="gotoElement('applyAsTutor')"><li>Apply as a Tutor</li></a>
-        <li>Contact</li>
+        <a href="/contact"><li>Contact</li></a>
     </ul>
 </header>
 
@@ -62,7 +62,8 @@
             <h1>Improve your grades.</h1>
 
             <p>Our online tutors are ready to help you 24/7</p>
-
+            <div class="buttonBox"> <button id="element1" class="loginButton" type="submit">Login</button><button id="element" class="tutorButton" type="submit">Become a Tutor</button></div>
+            <div class="modal modal1 indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Login</h1></div><div class="paddingBox"><span class="newFont">Login into your account via facebook.</span><a href="/auth/tutorRegister/facebook"><button class="fb" type="button">Login via Facebook </button></a></div></div>
         </div>
         <div ng-show="!anyoneLoggedIn" class="homePageLogin"><!--<div class="loginBackgroundBlur"></div>-->
             <login></login></div>
@@ -111,11 +112,11 @@
     </div>
 
     <div class="rightControls">
-         <div class="notifControl controls">
-             <div class="notifControlBox">
+        <div class="notifControl controls">
+            <div class="notifControlBox">
 
-             </div>
-         </div>
+            </div>
+        </div>
         <div class="messageControl controls"></div>
         <div class="profileControl controls"></div>
     </div>
@@ -124,26 +125,26 @@
 
 
 
-   <!-- <div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper">
-        <div class="headingBar"><h1>Request Lesson</h1>
-        </div>
-        <form name="reqLessonForm"  ng-submit="submitData()" novalidate>
-            <input type="text" placeholder="Subject" name="subject" ng-model="subject" required /><br/>
-            <textarea ng-model="message" required></textarea><br/>
-            <div id="upload" ng-controller="FileCtrl"><span>Attach File(s)</span>
-                <input type="file" ng-file-select="onFileSelect($files)" multiple>
-            </div> <br/>
-           <input id="deadline" type="number" placeholder="Deadline" name="input" ng-model="deadline"
-                            min="0" max="99" required>
-            <input type="number" placeholder="No. of Hours" ng-model="hours" min="0" max="99" required/><br/>
-            <select ng-model="mode" required>
-                <option value="" default selected>select mode</option>
-                <option selected="selected" value="0">private</option>
-                <option value="1">public</option>
-            </select><br/>
-            <button type="submit" ng-disabled="reqLessonForm.$invalid">Request Lesson</button><br/>
-        </form>
-    </div>-->
+    <!-- <div ng-controller="RequestLessonCtrl" id="requestLessonFormWrapper" class="formWrapper">
+         <div class="headingBar"><h1>Request Lesson</h1>
+         </div>
+         <form name="reqLessonForm"  ng-submit="submitData()" novalidate>
+             <input type="text" placeholder="Subject" name="subject" ng-model="subject" required /><br/>
+             <textarea ng-model="message" required></textarea><br/>
+             <div id="upload" ng-controller="FileCtrl"><span>Attach File(s)</span>
+                 <input type="file" ng-file-select="onFileSelect($files)" multiple>
+             </div> <br/>
+            <input id="deadline" type="number" placeholder="Deadline" name="input" ng-model="deadline"
+                             min="0" max="99" required>
+             <input type="number" placeholder="No. of Hours" ng-model="hours" min="0" max="99" required/><br/>
+             <select ng-model="mode" required>
+                 <option value="" default selected>select mode</option>
+                 <option selected="selected" value="0">private</option>
+                 <option value="1">public</option>
+             </select><br/>
+             <button type="submit" ng-disabled="reqLessonForm.$invalid">Request Lesson</button><br/>
+         </form>
+     </div>-->
 
 
 
@@ -195,15 +196,15 @@
     <a id="howItWorks"></a>
     <div class="howItWorks2 featureBox">
         <div class="scroll-arrow-wrapper"><div class="scroll-arrow pointer" ng-click="gotoElement('howItWorks')"></div></div>
-      <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>HOW</span></div><span class="endHeading newColor2">IT WORKS?</span><div class="lowerBroadBorder"></div></div></div>
+        <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>HOW</span></div><span class="endHeading newColor2">IT WORKS?</span><div class="lowerBroadBorder"></div></div></div>
         <div class="contentBox">
             <ul>
-            <li class="newColor2 workSteps"><div class="workStepHeadingIcon workStepHeadingIcon1"></div><div class="workStepHeading newFont">Search Tutor</div><div class="workStepDescription"><span>All of our tutors are verified. You can search, read tutor profiles and check previous reviews.</span></div></li>
-            <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon2"></div><div class="workStepHeading newFont">Pre-pay</div><div class="workStepDescription"><span>With HelpDU, you buy hours of learning time on a Pay As You Go basis. Simply, top up the minutes in your account before your lesson.</span></div></li>
-            <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon3"></div><div class="workStepHeading newFont">Request Lesson</div><div class="workStepDescription"><span>You can discuss lesson before requesting to a tutor Free of cost over chat.Send public or private lessons.</span></div></li>
-            <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon4"></div><div class="workStepHeading newFont">Done</div><div class="workStepDescription"><span>You'll be notified as soon as your lesson is completed, you can clear your doubts with the tutor if any.You can review lesson.</span></div></li>
+                <li class="newColor2 workSteps"><div class="workStepHeadingIcon workStepHeadingIcon1"></div><div class="workStepHeading newFont">Search Tutor</div><div class="workStepDescription"><span>All of our tutors are verified. You can search, read tutor profiles and check previous reviews.</span></div></li>
+                <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon2"></div><div class="workStepHeading newFont">Pre-pay</div><div class="workStepDescription"><span>With HelpDU, you buy hours of learning time on a Pay As You Go basis. Simply, top up the minutes in your account before your lesson.</span></div></li>
+                <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon3"></div><div class="workStepHeading newFont">Request Lesson</div><div class="workStepDescription"><span>You can discuss lesson before requesting to a tutor Free of cost over chat.Send public or private lessons.</span></div></li>
+                <li class="workSteps newColor2"><div class="workStepHeadingIcon workStepHeadingIcon4"></div><div class="workStepHeading newFont">Done</div><div class="workStepDescription"><span>You'll be notified as soon as your lesson is completed, you can clear your doubts with the tutor if any.You can review lesson.</span></div></li>
 
-        </ul>
+            </ul>
         </div>
     </div>
 
@@ -228,33 +229,34 @@
     <div class="howItWorks2 tutorRegistration featureBox">
         <div class="scroll-arrow-wrapper"><div class="scroll-arrow pointer" ng-click="gotoElement('applyAsTutor')"></div></div>
         <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>BECOME</span></div><span class="endHeading newColor2">A TUTOR!</span><div class="lowerBroadBorder"></div></div></div>
-        <div class="contentBox"><div class="content">
-    <h2 class="newColor2">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.</h2>
-        <button class="ApplyTutor" id="element">Apply Now</button>
+        <div class="contentBox">
+            <div class="content">
+            <h2 class="newColor2">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.</h2>
+            <button class="ApplyTutor" id="element">Apply Now</button>
             <div class="modal indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Become A Tutor</h1></div><div class="paddingBox"><span class="newFont">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.Work from home and earn extra money by becoming an online tutor with HelpDU.com!</span><a href="/auth/tutorRegister/facebook"><button class="fb" type="button">Sign up via Facebook </button></a></div></div>
         </div></div>
-        </div>
+    </div>
 
 </section>
 
 <footer class="newColor3">
     <div class="container">
-    <p>©2015 HelpDU. All rights reserved.</p>
-    <ul>
-        <li>
-            <a href="/about.html">About</a>
-        </li>
-        <li>
-            <a href="/contact.html">Contact</a>
-        </li>
-        <li>
-            <a href="">Terms &amp; Conditions</a>
-        </li>
-        <li>
-            <a href="">Privacy Policy</a>
-        </li>
-    </ul>
-        </div>
+        <p>©2015 HelpDU. All rights reserved.</p>
+        <ul>
+            <li>
+                <a href="/about.html">About</a>
+            </li>
+            <li>
+                <a href="/contact.html">Contact</a>
+            </li>
+            <li>
+                <a href="">Terms &amp; Conditions</a>
+            </li>
+            <li>
+                <a href="">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
 </footer>
 </div>
 
@@ -263,6 +265,15 @@
         document.getElementById('element').addEventListener('click', function ( e ) {
             Custombox.open({
                 target: '.modal',
+                effect: 'fadein',
+                width:'646'
+            });
+            e.preventDefault();
+        });
+
+        document.getElementById('element1').addEventListener('click', function ( e ) {
+            Custombox.open({
+                target: '.modal1',
                 effect: 'fadein',
                 width:'646'
             });
