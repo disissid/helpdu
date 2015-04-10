@@ -79,7 +79,7 @@ services.service('anchorSmoothScroll', function(){
         // is from http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
 
         var startY = currentYPosition();
-        var stopY = elmYPosition(eID)-60;
+        var stopY = elmYPosition(eID)+190-document.documentElement.clientHeight/2;
         var distance = stopY > startY ? stopY - startY : startY - stopY;
         if (distance < 100) {
             scrollTo(0, stopY); return;

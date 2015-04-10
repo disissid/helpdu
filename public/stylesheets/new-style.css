@@ -27,6 +27,7 @@ a:link,a,a:active{
 body{
     background: inherit;
     margin:0;
+    overflow-x: hidden;
 }
 
 input{
@@ -879,7 +880,7 @@ color: #ffffff;
 
 .howItWorks .steps{
     display: inline-block;
-    width: 33.1%;
+    width: 33%;
     height: 500px;
     padding-top: 50px;
     line-height: 100px;
@@ -1318,7 +1319,7 @@ color: #ffffff;
 .contentBox ul{
     text-align: left;
     margin-left: 120px;
-    width: 550px;
+    max-width: 550px;
     position: absolute;
     top: calc(50% - 188px);
 }
@@ -1340,7 +1341,7 @@ color: #ffffff;
     background-size: 24px;
 }
 
-.modal.indexFbRegister{
+.indexFbRegister{
     background: #fff;
     border-radius:5px;
 }
@@ -1474,6 +1475,8 @@ footer .footerBox{
 
 footer .container{
     margin: 70px 200px;
+    position: relative;
+    top: 75px;
 }
 
 footer p{
@@ -1485,7 +1488,6 @@ footer ul{
 }
 
 footer ul li{
-    font-weight:bold;
     display: inline-block;
     margin-left:20px;
 }
@@ -1496,7 +1498,7 @@ footer{
 }
 
 
-.modal{
+.modal,.modal1{
     display: none;
 }
 
