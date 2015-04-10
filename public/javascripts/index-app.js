@@ -2,7 +2,10 @@
 
 
 var indexApp = angular.module('indexApp',['directives','angularFileUpload','services','angularMaterialPreloader','customFilter'],function($locationProvider){
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
+    });
 });
 
 
@@ -25,7 +28,18 @@ indexApp.controller('NavCtrl', function($scope,loggedIn) {
 });
 
 
-indexApp.controller('MenuCtrl',function($scope,$http,$window){
+indexApp.controller('MenuCtrl',function($scope,$http,$window,anchorSmoothScroll,$location){
+
+    $scope.gotoElement = function (eID){
+        console.log(eID);
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash(eID);
+
+        // call $anchorScroll()
+        anchorSmoothScroll.scrollTo(eID);
+
+    };
 
     $scope.materialPreloader = false;
 
@@ -248,6 +262,7 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
             $scope.newTutor.teachingExp=data.tutorData.teachingExp;
             $scope.newTutor.extracurrInterests=data.tutorData.extracurrInterests
             $scope.step=data.tutorData.step;
+            $scope.value=$scope.step;
            $scope.newTutor.instiEmail=data.instituteEmail;
             $scope.newTutor.instiName=data.instituteName;
             $scope.selection=data.subjects;
@@ -264,8 +279,8 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
 
 
     $scope.check=function(i){
-        if($scope.value>=i){
-            $scope.step=i;
+        if($scope.step>=i){
+            $scope.value=i;
         }
     }
 
@@ -318,8 +333,10 @@ indexApp.controller('TutorRegistrationStepsCtrl',function($scope,$http){
         $http.post("/newTutorData/detailData",data)
             .success(function (data, status, headers, config) {
                 console.log(data);
-                $scope.step++;
                 $scope.value++;
+                if($scope.step<$scope.value){
+                    $scope.step=$scope.value;
+                }
             })
             .error(function (data, status, headers, config) {
 

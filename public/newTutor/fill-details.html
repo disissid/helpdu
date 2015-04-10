@@ -77,9 +77,18 @@
 
 
     <section>
-            <div class="registrationStepsContainer" ng-controller="TutorRegistrationStepsCtrl" ng-show="step<4">
-                <div class="registrationTimeline"><span ng-click="check(1)" >1</span><div ng-class="value > 1 ? 'enabled' : 'disabled'"  class="connectingLine"></div><span  ng-class="value > 1 ? 'enabled' : 'disabled'" ng-click="check(2)"  >2</span><div ng-class="value > 2 ? 'enabled' : 'disabled'" class="connectingLine"></div><span ng-class="value > 2 ? 'enabled' : 'disabled'" ng-click="check(3)" >3</span></div>
-                <div class="tutorRegistrationStep1 tutorRegistrationSteps" ng-show="step == 1">
+            <div class="registrationStepsContainer" ng-controller="TutorRegistrationStepsCtrl">
+                <div class="registrationTimeline">
+                    <span class="completed" ng-show="step > 1" ng-click="check(1)"></span>
+                    <span ng-click="check(1)" ng-show="step <= 1">1</span>
+                    <div ng-class="step > 1 ? 'enabled' : 'disabled'"  class="connectingLine"></div>
+                    <span class="completed" ng-show="step > 2" ng-click="check(2)"></span>
+                    <span  ng-class="step > 1 ? 'enabled' : 'disabled'" ng-click="check(2)" ng-show="step <= 2" >2</span>
+                    <div ng-class="step > 2 ? 'enabled' : 'disabled'" class="connectingLine"></div>
+                    <span class="completed" ng-show="step > 3" ng-click="check(3)"></span>
+                    <span ng-class="step > 2 ? 'enabled' : 'disabled'" ng-click="check(3)" ng-show="step <= 3" >3</span>
+                </div>
+                <div class="tutorRegistrationStep1 tutorRegistrationSteps"  ng-show="value == 1">
 
                         <form name="confirmInfoForm1" ng-submit="submitData()" novalidate>
                             <div class="headingBar"><div class="headingBarIcon"></div><h1 class="newFont newColor">Confirm Information</h1>
@@ -97,38 +106,40 @@
                 </div>
 
 
-                <div class="tutorRegistrationStep2 tutorRegistrationSteps" ng-show="step == 2">
+                <div class="tutorRegistrationStep2 tutorRegistrationSteps"  ng-show="value == 2">
                     <form name="confirmInfoForm2" ng-submit="submitData()" novalidate>
-                        <div class="headingBar"><div class="headingBarIcon"></div><h1>Area of Expertise</h1>
+                        <div class="headingBar"><div class="headingBarIcon"></div><h1 class="newFont newColor">Area of Expertise</h1>
                         </div>
                         <div class="paddingBox">
                                 <!--<span class="subjectsGroupHeading" ng-click="science = true" ng-show="science == false">+Science</span>
                                 <span class="subjectsGroupHeading" ng-click="science = false" ng-show="science == true">-Science</span>
                                 <div class="subjectGroup" ng-show="science == true">-->
                             <div class="subject" ng-repeat="subject in subjectList"><input id={{subject.subjectName}} type="checkbox" ng-checked="selection.indexOf(subject.subjectName) > -1" ng-click="toggleSelection(subject.subjectName)"  name="subject"  value="{{subject.subjectName}}">{{subject.subjectName}}</div>
-                            <div class="buttonContainer"><button type="submit" ng-disabled="confirmInfoForm2.$invalid">Confirm</button></div>
+                            <button type="submit" ng-disabled="confirmInfoForm2.$invalid">Confirm</button>
                         </div>
                     </form>
                 </div>
 
 
 
-                <div class="tutorRegistrationStep3 tutorRegistrationSteps" ng-show="step == 3">
+                <div class="tutorRegistrationStep3 tutorRegistrationSteps"  ng-show="value == 3">
                     <form name="confirmInfoForm3" ng-submit="submitData()" novalidate>
-                        <div class="headingBar"><div class="headingBarIcon"></div><h1>Tell us about yourself</h1>
+                        <div class="headingBar"><div class="headingBarIcon"></div><h1 class="newFont newColor">Tell us about yourself</h1>
                         </div>
                         <div class="paddingBox">
-                            <h1>Teaching Experience</h1>
+                            <h2>Teaching Experience</h2>
                             <textarea required ng-model="newTutor.teachingExp"></textarea>
-                            <h1>Extracurricular Interests</h1>
+                            <h2>Extracurricular Interests</h2>
                             <textarea required ng-model="newTutor.extracurrInterests"></textarea>
-                            <div class="buttonContainer"><button type="submit" ng-disabled="confirmInfoForm3.$invalid">Confirm</button></div>
+                            <button type="submit" ng-disabled="confirmInfoForm3.$invalid">Confirm</button>
                         </div>
                     </form>
                 </div>
+
+                <div ng-show="value > 3" class="successMessage"><h1>Our experts are looking into your profile.<br/>You will be notified via email when approved.</h1></div>
             </div>
 
-            <div ng-show="step>3"><span>HelpDU experts are looking into your profile.You will be notified via email when approved.</span></div>
+
 
     </section>
 

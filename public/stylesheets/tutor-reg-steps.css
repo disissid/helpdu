@@ -26,6 +26,7 @@ section:after {
     background: #ffffff;
     display: inline-block;
     box-shadow: 0px 1px 3px rgba(100, 100, 100, 0.40);
+    margin: 100px 0;
 }
 
 .registrationTimeline{
@@ -38,45 +39,29 @@ section:after {
     width:40px;
     height:40px;
     border-radius: 50%;
-    border:2px solid #AF7AC5;
     line-height: 40px;
     font-size: 20px;
-    color: #AF7AC5;
     cursor: pointer;
+    border:2px solid #ED1F23;;
+    color: #ED1F23;;
 }
 
-.registrationTimeline span:nth-child(7n){
-    border:2px solid #AF7AC5;
-    color: #AF7AC5;
-}
 
-.registrationTimeline span:nth-child(7n+1){
 
-     border:2px solid #ED1F23;;
-     color: #ED1F23;;
+.registrationTimeline span.completed{
+    background: url("../images/New%20folder/right1.png");
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: center;
+    position: relative;
+    top: 13px;
+
  }
 
-.registrationTimeline .connectingLine:nth-child(7n+2){
+.registrationTimeline .connectingLine{
     background: #ED1F23;;
 }
 
-.registrationTimeline span:nth-child(7n+3){
-    border:2px solid #52BE80;
-    color: #52BE80;
-}
-
-.registrationTimeline .connectingLine:nth-child(7n+4){
-    background: #52BE80;
-}
-
-.registrationTimeline span:nth-child(7n+5){
-    border:2px solid #5499C7;
-    color: #5499C7;
-}
-
-.registrationTimeline .connectingLine:nth-child(7n+6){
-    background:#5499C7;
-}
 
 .registrationTimeline .connectingLine{
     display: inline-block;
@@ -89,18 +74,30 @@ section:after {
 .registrationTimeline span.disabled{
     color:#ccc;
     border:2px solid #ccc;
+    background: url("");
 }
 
 .registrationTimeline .connectingLine.disabled{
     background: #ccc;
 }
 
-.tutorRegistrationSteps{
-display: inline-block;
+.tutorRegistrationSteps {
+    display: inline-block;
     background: #ffffff;
     width: 100%;
     min-width: 600px;
+    overflow: hidden;
+    height: auto;
 }
+
+.successMessage h1{
+    margin: 20px;
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+
+
 
 .tutorRegistrationSteps input{
     margin-bottom:20px;
@@ -197,38 +194,13 @@ float: right;
     padding:20px;
 }
 
-.tutorRegistrationStep1 .headingBar{
+.tutorRegistrationSteps .headingBar{
     border-bottom: 2px solid #ED1F23;;
     color:#ED1F23;;
 }
 
-.tutorRegistrationStep2 .headingBar{
-    border-bottom: 2px solid #52BE80;
-    color:#52BE80;
-}
 
-.tutorRegistrationStep2 .buttonContainer{
-    border:2px solid #52BE80;
-}
-
-.tutorRegistrationStep2 button{
-    background: #52BE80;
-}
-
-.tutorRegistrationStep3 .headingBar{
-    border-bottom: 2px solid #5499C7;
-    color:#5499C7;
-}
-
-.tutorRegistrationStep3 .buttonContainer{
-    border:2px solid #5499C7;
-}
-
-.tutorRegistrationStep3 button{
-    background: #5499C7;
-}
-
-.tutorRegistrationStep3 h1{
+.tutorRegistrationStep3 h2{
     font-size: 22px;
     margin: 10px 0;
 }

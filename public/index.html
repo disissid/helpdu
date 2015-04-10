@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="indexApp" class="indexPage">
 <head lang="en">
+    <base href="/Help%20Du/">
     <meta charset="UTF-8">
     <title>HelpDU</title>
     <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
@@ -28,10 +29,10 @@
     <div class="nameHeading"><span ng-class="boolChangeClass ? 'newColor1' : 'newColor3'">Help</span><span class="newColor">DU</span></div>
     <ul ng-class="boolChangeClass ? 'newColor1' : 'newColor3'">
         <li>About</li>
-        <li>Features</li>
-        <li>How it works</li>
-        <li>Why HelpDU</li>
-        <li>Apply as a Tutor</li>
+        <a  ng-click="gotoElement('features')"><li>Features</li></a>
+        <a  ng-click="gotoElement('howItWorks')"><li>How it works</li></a>
+        <a  ng-click="gotoElement('whyHelpdu')"><li>Why HelpDU</li></a>
+        <a  ng-click="gotoElement('applyAsTutor')"><li>Apply as a Tutor</li></a>
         <li>Contact</li>
     </ul>
 </header>
@@ -148,8 +149,9 @@
 
 
 
-
-    <div class="howItWorks">
+    <a id="features"></a>
+    <div class="howItWorks featureBox">
+        <div class="scroll-arrow-wrapper"><div class="scroll-arrow pointer" ng-click="gotoElement('features')"></div></div>
         <h2>Imagine how much easier homework would be<br>if you could...</h2>
         <div class="searchTutor steps"><div class="stepHeading"><span>24/7 Access</span></div><div class="stepImage"></div><div class="stepDescription"><span>Connect instantly anytime, anywhere.</span></div></div>
         <div class="requestLesson steps"><div class="stepHeading"><span>The Best Tutors</span></div><div class="stepImage"></div><div class="stepDescription"><span>Choose from thousands of approved online tutors.</span></div></div>
@@ -191,8 +193,9 @@
             </div>
         </div>
         </div>-->
-
-    <div class="howItWorks2">
+    <a id="howItWorks"></a>
+    <div class="howItWorks2 featureBox">
+        <div class="scroll-arrow-wrapper"><div class="scroll-arrow pointer" ng-click="gotoElement('howItWorks')"></div></div>
       <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>HOW</span></div><span class="endHeading newColor2">IT WORKS?</span><div class="lowerBroadBorder"></div></div></div>
         <div class="contentBox">
             <ul>
@@ -207,8 +210,9 @@
 
     <div class="imageBreak imageBreak2"><div class="opacityCover"></div></div>
 
-
-    <div class="howItWorks2 whyHelpdu">
+    <a id="whyHelpdu"></a>
+    <div class="howItWorks2 whyHelpdu featureBox">
+        <div class="scroll-arrow-wrapper"><div class="scroll-arrow pointer" ng-click="gotoElement('whyHelpdu')"></div></div>
         <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>WHY</span></div><span class="endHeading newColor2">HELPDU?</span><div class="lowerBroadBorder"></div></div></div>
         <div class="contentBox">
             <ul class="newColor2">
@@ -221,9 +225,10 @@
     </div>
 
     <div class="imageBreak imageBreak3"><div class="opacityCover"></div></div>
-    <div class="howItWorks2 tutorRegistration">
+    <a id="applyAsTutor"></a>
+    <div class="howItWorks2 tutorRegistration featureBox">
+        <div class="scroll-arrow-wrapper"><div class="scroll-arrow pointer" ng-click="gotoElement('applyAsTutor')"></div></div>
         <div class="headingBox newFont"> <div class="heading"><div class="newColor startHeading"><span>BECOME</span></div><span class="endHeading newColor2">A TUTOR!</span><div class="lowerBroadBorder"></div></div></div>
-
         <div class="contentBox"><div class="content">
     <h2 class="newColor2">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.</h2>
         <button class="ApplyTutor" id="element">Apply Now</button>

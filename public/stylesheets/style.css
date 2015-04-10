@@ -20,6 +20,12 @@ html.indexPage{
 }
 
 
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important; /* yes, important */
+}
+
+
 a:link{
     color: inherit;
 }
@@ -70,6 +76,7 @@ header {
     z-index: 2;
     -webkit-transition: all 0.5s ease;
 }
+
 
 header .options{
     border-right: 1px #B8B8B8 solid;
