@@ -4,7 +4,7 @@
 var indexApp = angular.module('indexApp',['directives','angularFileUpload','services','angularMaterialPreloader','customFilter'],function($locationProvider){
     $locationProvider.html5Mode({
         enabled: true,
-        requireBase: false
+        requireBase:true
     });
 });
 
