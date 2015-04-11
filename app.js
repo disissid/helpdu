@@ -104,6 +104,8 @@ app.use('/',register);
 
 //app.use('/student',passportConfig.accessControl('student'),student);
 //app.use('/studentData',passportConfig.checkAuth('student'),studentData);
+app.use('/',common); //All common routes
+
 
 app.use('/tutor',passportConfig.accessControl('tutor'),tutor);
 app.use('/tutorData',passportConfig.checkAuth('tutor'),tutorData);
@@ -115,8 +117,6 @@ app.use('/',adminDashboard);
 app.use('/admin',passportConfig.accessControl('admin'),adminDashboard);
 app.use('/adminData',passportConfig.checkAuth('admin'),adminDashboardData);
 app.use('/',passportConfig.checkAuth('admin'),adminRoutes);
-
-app.use('/',common); //All common routes
 
 
 
