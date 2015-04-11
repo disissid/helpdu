@@ -13,8 +13,6 @@ var fs=require('fs');
 var Busboy=require('busboy');
 
 
-
-
 //Set max upload limit 5 mb here
 //File upload change after putting amazon service here
 //Do error handling here

@@ -16,12 +16,12 @@ var passportConfig=require('./configFiles/passportConfig.js');
 var databaseAPI = require('./routes/databaseAPI');
 
 var adminRoutes = require('./routes/adminRoutes');
-var adminDashboard = require('./routes/adminDashboard.js');
+var adminDashboard = require('./routes/adminDashboard.js'); 
 var adminDashboardData = require('./routes/adminDashboardData.js');
 
 var login=require('./routes/login');
 var register=require('./routes/register');
-var uploads = require('./routes/uploads');
+//var uploads = require('./routes/uploads');
 
 var common = require('./routes/common.js');
 
@@ -102,8 +102,8 @@ app.use('/',login);
 app.use('/',register);
 app.use('/',uploads);
 
-app.use('/student',passportConfig.accessControl('student'),student);
-app.use('/studentData',passportConfig.checkAuth('student'),studentData);
+//app.use('/student',passportConfig.accessControl('student'),student);
+//app.use('/studentData',passportConfig.checkAuth('student'),studentData);
 
 app.use('/tutor',passportConfig.accessControl('tutor'),tutor);
 app.use('/tutorData',passportConfig.checkAuth('tutor'),tutorData);
@@ -112,11 +112,13 @@ app.use('/newTutor',passportConfig.accessControl('newTutor'),newTutor);
 app.use('/newTutorData',passportConfig.checkAuth('newTutor'),newTutorData);
 
 app.use('/',adminDashboard);
-app.use('/admin',passportConfig.accessControl('admin'),adminDashboardData);
+app.use('/admin',passportConfig.accessControl('admin'),adminDashboard);
+app.use('/adminData',passportConfig.checkAuth('admin'),adminDashboardData);
+app.use('/',passportConfig.checkAuth('admin'),adminRoutes);
 
 app.use('/',common); //All common routes
 
-app.use('/',adminRoutes); //Routes for the admin will be blocked in the final release
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

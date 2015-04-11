@@ -57,12 +57,11 @@ router.get('/authenticationError',function(req,res){
 	res.sendFile(path.normalize(__dirname+'/../public/authentication-error.html'));
 });
 
-/*
 //404 page
 router.get('*',function(req,res){
 	res.json("404 not found");
 });
-*/
+
 
 mongoose.connect('mongodb://127.0.0.1:27017/helpdu'); //change this statement in the production version
 
