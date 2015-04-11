@@ -61,25 +61,8 @@ indexApp.controller('MenuCtrl',function($scope,$http,$window,anchorSmoothScroll,
     }*/
 
 
-    $scope.fbLogin=function(){
-        $http.get("/auth/login/facebook")
-            .success(function (data, status, headers, config)
-            {  console.log(data);
-            })
-            .error(function (data, status, headers, config) {
 
-            });
-    }
 
-    $scope.becomeTutor=function(){
-        $http.get("/auth/tutorRegister/facebook")
-            .success(function (data, status, headers, config)
-            {  console.log(data);
-            })
-            .error(function (data, status, headers, config) {
-
-            });
-    }
 
 
    $scope.menuOpened = false;

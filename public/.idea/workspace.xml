@@ -27,8 +27,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12540895" vertical-offset="0" max-vertical-offset="6670">
-              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+            <state vertical-scroll-proportion="-1.3544166" vertical-offset="1311" max-vertical-offset="6670">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -39,8 +39,8 @@
       <file leaf-file-name="index-app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascripts/index-app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.928571" vertical-offset="0" max-vertical-offset="17940">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+            <state vertical-scroll-proportion="-27.5" vertical-offset="702" max-vertical-offset="17549">
+              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,8 +69,8 @@
       <file leaf-file-name="new-style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stylesheets/new-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.357142" vertical-offset="13306" max-vertical-offset="36570">
-              <caret line="596" column="23" selection-start-line="596" selection-start-column="23" selection-end-line="596" selection-end-column="23" />
+            <state vertical-scroll-proportion="-20.535715" vertical-offset="207" max-vertical-offset="36616">
+              <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -174,14 +174,14 @@
         <option value="$PROJECT_DIR$/stylesheets/style.css" />
         <option value="$PROJECT_DIR$/stylesheets/tutor-reg-steps.css" />
         <option value="$PROJECT_DIR$/javascripts/services/services.js" />
-        <option value="$PROJECT_DIR$/javascripts/index-app.js" />
         <option value="$PROJECT_DIR$/stylesheets/footer-links-style.css" />
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/contact.html" />
         <option value="$PROJECT_DIR$/newTutor/fill-details.html" />
         <option value="$PROJECT_DIR$/privacy-policy.html" />
-        <option value="$PROJECT_DIR$/stylesheets/new-style.css" />
+        <option value="$PROJECT_DIR$/javascripts/index-app.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/stylesheets/new-style.css" />
       </list>
     </option>
   </component>
@@ -304,7 +304,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="71" y="0" width="1865" height="1096" extended-state="0" />
+    <frame x="71" y="0" width="1865" height="1096" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -718,26 +718,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascripts/index-app.js">
+    <entry file="file://$PROJECT_DIR$/stylesheets/new-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.928571" vertical-offset="0" max-vertical-offset="17940">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state vertical-scroll-proportion="-20.535715" vertical-offset="207" max-vertical-offset="36616">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/new-style.css">
+    <entry file="file://$PROJECT_DIR$/javascripts/index-app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.357142" vertical-offset="13306" max-vertical-offset="36570">
-          <caret line="596" column="23" selection-start-line="596" selection-start-column="23" selection-end-line="596" selection-end-column="23" />
+        <state vertical-scroll-proportion="-27.5" vertical-offset="702" max-vertical-offset="17549">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12540895" vertical-offset="0" max-vertical-offset="6670">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        <state vertical-scroll-proportion="-1.3544166" vertical-offset="1311" max-vertical-offset="6670">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

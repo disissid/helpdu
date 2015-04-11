@@ -32,6 +32,7 @@ html.indexPage{
 
 a:link,a,a:active{
     color: inherit;
+    text-decoration: none;
 }
 
 body{
@@ -94,7 +95,7 @@ header ul{
 
 header ul li{
     display: inline-block;
-    display: inline-block;
+    cursor: pointer;
     margin: 0 20px;
 }
 
@@ -127,6 +128,7 @@ header ul li{
     background: url(../images/New%20folder/scroll-arrow.png) no-repeat;
     background-position: 0 0;
     margin:auto;
+    cursor: pointer;
 }
 
 

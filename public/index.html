@@ -61,8 +61,8 @@
             <h1>Improve your grades.</h1>
 
             <p>Our online tutors are ready to help you 24/7</p>
-            <div class="buttonBox"> <button id="element1" class="loginButton" type="submit">Login</button><button id="element" class="tutorButton" type="submit">Become a Tutor</button></div>
-            <div class="modal1 indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Login</h1></div><div class="paddingBox"><span class="newFont">Login into your account via facebook.</span><button class="fb" type="button" ng-click="fbLogin()">Login via Facebook </button></div></div>
+            <div class="buttonBox"><button id="element1" class="loginButton" type="submit">Login</button><button id="element" class="tutorButton" type="submit">Become a Tutor</button></div>
+            <div class="modal1 indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Login</h1></div><div class="paddingBox"><span class="newFont">Login into your account via facebook.</span><a href="/auth/login/facebook"><button class="fb" type="button">Login via Facebook </button></a></div></div>
         </div>
         <div ng-show="!anyoneLoggedIn" class="homePageLogin"><!--<div class="loginBackgroundBlur"></div>-->
             <login></login></div>
@@ -232,7 +232,7 @@
             <div class="content">
             <h2 class="newColor2">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.</h2>
             <button class="ApplyTutor" id="element">Apply Now</button>
-            <div class="modal indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Become A Tutor</h1></div><div class="paddingBox"><span class="newFont">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.Work from home and earn extra money by becoming an online tutor with HelpDU.com!</span><button class="fb" ng-click="becomeTutor()"type="button">Sign up via Facebook </button></div></div>
+            <div class="modal indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Become A Tutor</h1></div><div class="paddingBox"><span class="newFont">If you love your field and want to share your knowledge, you’ll love being an online tutor with HelpDU.com.Work from home and earn extra money by becoming an online tutor with HelpDU.com!</span><a href="/auth/tutorRegister/facebook"> <button class="fb" type="button">Sign up via Facebook </button></a></div></div>
         </div></div>
     </div>
 
