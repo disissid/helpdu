@@ -99,7 +99,7 @@ header ul li{
     margin: 0 20px;
 }
 
-.min header{
+.min header,header.normal{
     background: #fff;
     top:0px;
     height:60px;
@@ -1515,7 +1515,7 @@ footer{
 }
 
 
-.modal,.modal1{
+.modal,.modal1,.modal2{
     display: none;
 }
 
@@ -1583,4 +1583,9 @@ footer{
     font-size:24px;
     line-height: 1.4;
     max-width:600px;
+    margin:100px 0;
+}
+
+.errorContainer h1{
+    font-size: 39px;
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="indexApp">
+<head lang="en">
+    <base href="http://localhost:57440/Help%20Du/"/>
+    <meta charset="UTF-8">
+    <title>HelpDU</title>
+    <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
+    <!--<script type="text/javascript" src="javascripts/lib/angular-facebook.js"></script>-->
+    <script src="javascripts/lib/angular-file-upload-shim.min.js"></script>
+    <script src="javascripts/lib/angular-file-upload.min.js"></script>
+    <script type="text/javascript" src="javascripts/directives/directives.js"></script>
+    <script type="text/javascript" src="javascripts/services/services.js"></script>
+    <script type="text/javascript" src="javascripts/directives/focus-directive.js"></script>
+    <script type="text/javascript" src="javascripts/index-app.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/css-reset.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/new-style.css"/>
+</head>
+<body ng-controller="MenuCtrl">
+
+
+<div  id="mainContentWrapper" ng-class="menuOpened ? 'asideOpen' : 'asideClose'">
+    <header class="normal">
+        <a href="/"><div class="nameHeading"><span ng-class="newColor1">Help</span><span class="newColor">DU</span></div></a>
+    </header>
+
+
+
+
+    <section>
+        <div class="errorContainer">
+            <h1 class="newFont">You just got <span class="newColor">404'D</span></h1>
+            <span>The page you are looking for doesn't exist.Sorry :(</span>
+        </div>
+
+
+    </section>
+
+    <footer class="newColor3">
+        <div class="container">
+            <p>©2015 HelpDU. All rights reserved.</p>
+            <ul>
+                <li>
+                    <a href="/about.html">About</a>
+                </li>
+                <li>
+                    <a href="/contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="/privacy-policy.html/#terms">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

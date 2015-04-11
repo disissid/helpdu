@@ -1,12 +1,7 @@
 //file uploading need to be done via amazon s3
 
 
-var indexApp = angular.module('indexApp',['directives','angularFileUpload','services','angularMaterialPreloader','customFilter'],function($locationProvider){
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase:true
-    });
-});
+var indexApp = angular.module('indexApp',['directives','angularFileUpload','services','angularMaterialPreloader','customFilter']);
 
 
 indexApp.controller('NavCtrl', function($scope,loggedIn) {

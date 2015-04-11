@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="indexApp" class="indexPage">
 <head lang="en">
-    <base href="/"/>
     <meta charset="UTF-8">
     <title>HelpDU</title>
     <script type="text/javascript" src="javascripts/lib/angular.min.js"></script>
@@ -61,8 +60,8 @@
             <h1>Improve your grades.</h1>
 
             <p>Our online tutors are ready to help you 24/7</p>
-            <div class="buttonBox"><button id="element1" class="loginButton" type="submit">Login</button><button id="element" class="tutorButton" type="submit">Become a Tutor</button></div>
-            <div class="modal1 indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Login</h1></div><div class="paddingBox"><span class="newFont">Login into your account via facebook.</span><a href="/auth/login/facebook"><button class="fb" type="button">Login via Facebook </button></a></div></div>
+            <div class="buttonBox"><button id="element2" class="loginButton" type="submit">Login</button><button class="tutorButton" id="element1" type="submit">Become a Tutor</button></div>
+            <div class="modal2 indexFbRegister"><div class="headingContainer"><h1 class="newColor newFont">Login</h1></div><div class="paddingBox"><span class="newFont">Login into your account via facebook.</span><a href="/auth/login/facebook"><button class="fb" type="button">Login via Facebook </button></a></div></div>
         </div>
         <div ng-show="!anyoneLoggedIn" class="homePageLogin"><!--<div class="loginBackgroundBlur"></div>-->
             <login></login></div>
@@ -261,23 +260,32 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('element').addEventListener('click', function ( e ) {
+            document.getElementById('element').addEventListener('click', function (e) {
+                Custombox.open({
+                    target: '.modal',
+                    effect: 'fadein',
+                    width: '646'
+                });
+                e.preventDefault();
+            });
+        document.getElementById('element1').addEventListener('click', function (e) {
             Custombox.open({
                 target: '.modal',
                 effect: 'fadein',
-                width:'646'
+                width: '646'
             });
             e.preventDefault();
         });
 
-        document.getElementById('element1').addEventListener('click', function ( e ) {
+        document.getElementById('element2').addEventListener('click', function (e) {
             Custombox.open({
-                target: '.modal1',
+                target: '.modal2',
                 effect: 'fadein',
-                width:'646'
+                width: '646'
             });
             e.preventDefault();
         });
+
     });
 </script> 
 
