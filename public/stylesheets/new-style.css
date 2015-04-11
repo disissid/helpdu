@@ -1,7 +1,16 @@
+@font-face {
+    font-family: 'Homenaje';
+    src: url("../fonts/Homenaje-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
 
 *,body,html{
     font-weight: 400;
-    font-family:'Open Sans', sans-serif;
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
@@ -908,7 +917,7 @@ color: #ffffff;
 }
 
 .searchTutor.steps .stepImage{
-    background: url("../images/New%20folder/24-71.png")  no-repeat center;
+    background: url("../images/New%20folder/connect.png")  no-repeat center;
     background-size: contain;
     transition:all 0.3s linear 0.1s;
 }
@@ -985,7 +994,7 @@ color: #ffffff;
 
 
 .requestLesson.steps .stepImage{
-    background: url("../images/New%20folder/best1.png")  no-repeat center;
+    background: url("../images/New%20folder/best2.png")  no-repeat center;
     background-size: contain;
 }
 
