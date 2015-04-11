@@ -100,7 +100,7 @@ app.use('/',databaseAPI);
 
 app.use('/',login);
 app.use('/',register);
-app.use('/',uploads);
+//app.use('/',uploads);
 
 //app.use('/student',passportConfig.accessControl('student'),student);
 //app.use('/studentData',passportConfig.checkAuth('student'),studentData);
